@@ -135,13 +135,13 @@ function lib:Window(text, preset, closebind)
     Title.TextSize = 20.000
     Title.TextXAlignment = Enum.TextXAlignment.Left
 
-    UserHead.Name = "MinimizeLabel"
+    UserHead.Name = "AvatarHead"
     UserHead.Parent = Main
-    UserHead.BackgroundColor3 = Color3.fromRGB(41, 41, 41)
-    UserHead.BackgroundTransparency = 1.000
+    UserHead.BackgroundColor3 = Color3.fromRGB(51, 51, 51)
+    UserHead.BackgroundTransparency = 0.000
     UserHead.Position = UDim2.new(10, 0, 0, 40)
     UserHead.Size = UDim2.new(0, 32, 0, 32)
-    UserHead.Image = "http://www.roblox.com/asset/?id=6035067836"
+    UserHead.Image = "https://www.roblox.com/headshot-thumbnail/image?userId="..game.Players.LocalPlayer.UserId.."&width=420&height=420&format=png"
     UserHead.ImageColor3 = Color3.fromRGB(220, 221, 222)
 
     Ign.Name = "IGN"
@@ -152,7 +152,7 @@ function lib:Window(text, preset, closebind)
     Ign.Size = UDim2.new(0, 200, 0, 25)
     Ign.Font = Enum.Font.GothamSemibold
     Ign.Text = game.Players.LocalPlayer.DisplayName.."#"tostring(math.random(1000,9999))
-    Ign.TextColor3 = Color3.fromRGB(255, 255, 255)
+    Ign.TextColor3 = Color3.fromRGB(255, 166, 13)
     Ign.TextSize = 12.000
     Ign.TextXAlignment = Enum.TextXAlignment.Left
 
