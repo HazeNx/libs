@@ -108,7 +108,7 @@ function lib:Window(text, preset, closebind)
     Main.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
     Main.BorderSizePixel = 0
     Main.Position = UDim2.new(0.5, 0, 0.5, 0)
-    Main.Size = UDim2.new(0, 0, 0, 320)
+    Main.Size = UDim2.new(0, 0, 0, 0)
     Main.ClipsDescendants = true
     Main.Visible = true
 
