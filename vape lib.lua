@@ -141,7 +141,7 @@ function lib:Window(text, preset, closebind)
     UserHead.BackgroundTransparency = 1.000
     UserHead.Position = UDim2.new(10, 0, 0, 40)
     UserHead.Size = UDim2.new(0, 32, 0, 32)
-    UserHeae.Image = "http://www.roblox.com/asset/?id=6035067836"
+    UserHead.Image = "http://www.roblox.com/asset/?id=6035067836"
     UserHead.ImageColor3 = Color3.fromRGB(220, 221, 222)
 
     Ign.Name = "IGN"
