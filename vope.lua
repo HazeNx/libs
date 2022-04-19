@@ -445,7 +445,7 @@ DragFrame.Name = "DragFrame"
 MinimizeBtn.MouseButton1Click:Connect(function()
    if minimized == false then
    		      Main:TweenSize(
-   					UDim2.new(0, 0, 0, 40),
+   					UDim2.new(0, 560, 0, 41),
    					Enum.EasingDirection.Out,
    					Enum.EasingStyle.Quart,
    					.3,
@@ -459,7 +459,7 @@ MinimizeBtn.MouseButton1Click:Connect(function()
                           v.Visible = false
                         else
                      Main:TweenSize(
-   					UDim2.new(0, 0, 0, 320),
+   					UDim2.new(0, 560, 0, 320),
    					Enum.EasingDirection.Out,
    					Enum.EasingStyle.Quart,
    					.3,
