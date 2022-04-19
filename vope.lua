@@ -108,7 +108,7 @@ function lib:Window(text, preset, closebind)
     Main.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
     Main.BorderSizePixel = 0
     Main.Position = UDim2.new(0.5, 0, 0.5, 0)
-    Main.Size = UDim2.new(0, 0, 0, 0)
+    Main.Size = UDim2.new(0, 0, 0, 320)
     Main.ClipsDescendants = true
     Main.Visible = true
 
@@ -443,29 +443,31 @@ DragFrame.Name = "DragFrame"
         end
 
 MinimizeBtn.MouseButton1Click:Connect(function()
-   if minimized == false then
-   		      Main:TweenSize(
-   					UDim2.new(0, 560, 0, 41),
-   					Enum.EasingDirection.Out,
-   					Enum.EasingStyle.Quart,
-   					.3,
-   					true)
-               for i, v in next, TabFolder:GetChildren() do
+   if minimized == true then do
+      for i, v in next, TabFolder:GetChildren() do
                        if v.Name == "Tab" then
                            v.Visible = false
                        end
                    for i, v in next, TabHold:GetChildren() do
                        if v.Name == "TabBtn" then 
                           v.Visible = false
-                        else
-                     Main:TweenSize(
-   					UDim2.new(0, 560, 0, 320),
+   		      Main:TweenSize(
+   	UDim2.new(0, 560, 0, 41),
    					Enum.EasingDirection.Out,
    					Enum.EasingStyle.Quart,
    					.3,
-   					true
-   				)
+   					true)
                        end
+                   end
+      end
+      end
+      else
+   Main:TweenSize(UDim2.new(0, 560, 0, 320),
+ Enum.EasingDirection.Out,
+ Enum.EasingStyle.Quart,
+ .3, 
+ true)
+                       
    		for i, v in next, TabFolder:GetChildren() do
                        if v.Name == "Tab" then
                            v.Visible = true
@@ -473,13 +475,11 @@ MinimizeBtn.MouseButton1Click:Connect(function()
                    for i, v in next, TabHold:GetChildren() do
                        if v.Name == "TabBtn" then 
                           v.Visible = true
-                          minimized = not minimized end
+       minimized = not minimized
+       end
     end
-                 end
-                      end
-               end
-   		                end
-   
+end
+end
 end)
 		   
         TabBtn.MouseButton1Click:Connect(
