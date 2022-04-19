@@ -136,11 +136,21 @@ function lib:Window(text, preset, closebind)
     Title.TextSize = 20.000
     Title.TextXAlignment = Enum.TextXAlignment.Left
 
+DragFrame.Name = "DragFrame"
+    DragFrame.Parent = Main
+    DragFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    DragFrame.BackgroundTransparency = 1.000
+    DragFrame.Size = UDim2.new(0, 560, 0, 41)
+
+    Main:TweenSize(UDim2.new(0, 560, 0, 319), Enum.EasingDirection.Out, Enum.EasingStyle.Quart, .6, true)
+
+    MakeDraggable(DragFrame, Main)
+
     UserHead.Name = "AvatarHead"
-    UserHead.Parent = Main
+    UserHead.Parent = DragFrame
     UserHead.BackgroundColor3 = Color3.fromRGB(51, 51, 51)
-    UserHead.BackgroundTransparency = 0.000
-    UserHead.Position = UDim2.new(0, 10, 0, 40)
+    UserHead.BackgroundTransparency = 1.000
+    UserHead.Position = UDim2.new(0, 13, 0, 4)
     UserHead.Size = UDim2.new(0, 32, 0, 32)
     UserHead.Image = "https://www.roblox.com/headshot-thumbnail/image?userId="..game.Players.LocalPlayer.UserId.."&width=420&height=420&format=png"
     UserHead.ImageColor3 = Color3.fromRGB(220, 221, 222)
@@ -151,10 +161,10 @@ function lib:Window(text, preset, closebind)
 	UserCircleImage.BackgroundTransparency = 1.000
 	UserCircleImage.Size = UDim2.new(0, 32, 0, 32)
 	UserCircleImage.Image = "rbxassetid://4031889928"
-	UserCircleImage.ImageColor3 = Color3.fromRGB(41, 43, 47)
+	UserCircleImage.ImageColor3 = Color3.fromRGB(30, 30, 30)
 
     Ign.Name = "IGN"
-    Ign.Parent = Main
+    Ign.Parent = DragFrame
     Ign.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
     Ign.BackgroundTransparency = 1.000
     Ign.Position = UDim2.new(0, 51, 0, 20)
@@ -169,7 +179,7 @@ function lib:Window(text, preset, closebind)
 	MinimizeBtn.Parent = Main
 	MinimizeBtn.BackgroundColor3 = Color3.fromRGB(32, 34, 37)
 	MinimizeBtn.BackgroundTransparency = 0
-	MinimizeBtn.Position = UDim2.new(0, 510, -0, 4)
+	MinimizeBtn.Position = UDim2.new(0, 510, -0, 10)
 	MinimizeBtn.Size = UDim2.new(0, 28, 0, 22)
 	MinimizeBtn.Font = Enum.Font.Gotham
 	MinimizeBtn.Text = ""
@@ -182,7 +192,7 @@ function lib:Window(text, preset, closebind)
     	MinimizeIcon.Parent = MinimizeBtn
     	MinimizeIcon.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
     	MinimizeIcon.BackgroundTransparency = 1.000
-    	MinimizeIcon.Position = UDim2.new(0, 510, 0, 4)
+    	MinimizeIcon.Position = UDim2.new(0, 0, 0, 0)
     	MinimizeIcon.Size = UDim2.new(0, 17, 0, 17)
     	MinimizeIcon.Image = "http://www.roblox.com/asset/?id=6035067836"
     	MinimizeIcon.ImageColor3 = Color3.fromRGB(220, 221, 222)
@@ -191,7 +201,7 @@ function lib:Window(text, preset, closebind)
 		function()
 			if minimized == false then
 				Main:TweenSize(
-					UDim2.new(0, 681, 0, 22),
+					UDim2.new(0, 560, 0, 41),
 					Enum.EasingDirection.Out,
 					Enum.EasingStyle.Quart,
 					.3,
@@ -199,7 +209,7 @@ function lib:Window(text, preset, closebind)
 				)
 			else
 				Main:TweenSize(
-					UDim2.new(0, 681, 0, 396),
+					UDim2.new(0, 560, 0, 396),
 					Enum.EasingDirection.Out,
 					Enum.EasingStyle.Quart,
 					.3,
@@ -209,16 +219,6 @@ function lib:Window(text, preset, closebind)
 			minimized = not minimized
 		end
 	)
-
-    DragFrame.Name = "DragFrame"
-    DragFrame.Parent = Main
-    DragFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-    DragFrame.BackgroundTransparency = 1.000
-    DragFrame.Size = UDim2.new(0, 560, 0, 41)
-
-    Main:TweenSize(UDim2.new(0, 560, 0, 319), Enum.EasingDirection.Out, Enum.EasingStyle.Quart, .6, true)
-
-    MakeDraggable(DragFrame, Main)
 
     local uitoggled = false
     UserInputService.InputBegan:Connect(
