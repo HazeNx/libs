@@ -461,7 +461,7 @@ MinimizeBtn.MouseButton1Click:Connect(function()
                    end
       end
       end
-      else
+      elseif minimized == false then do
    Main:TweenSize(UDim2.new(0, 560, 0, 320),
  Enum.EasingDirection.Out,
  Enum.EasingStyle.Quart,
@@ -478,6 +478,7 @@ MinimizeBtn.MouseButton1Click:Connect(function()
        minimized = not minimized
        end
     end
+end
 end
 end
 end)
