@@ -155,19 +155,6 @@ function lib:Window(text, preset, closebind)
     Ign.TextColor3 = Color3.fromRGB(255, 166, 13)
     Ign.TextSize = 12.000
     Ign.TextXAlignment = Enum.TextXAlignment.Left
-
-    MinimizeBtn.Name = "MinimizeButton"
-    	MinimizeBtn.Parent = Main
-    	MinimizeBtn.BackgroundColor3 = Color3.fromRGB(32, 34, 37)
-    	MinimizeBtn.BackgroundTransparency = 0
-    	MinimizeBtn.Position = UDim2.new(510, 0, 0, 40)
-    	MinimizeBtn.Size = UDim2.new(0, 38, 0, 32)
-    	MinimizeBtn.Font = Enum.Font.Gotham
-    	MinimizeBtn.Text = ""
-    	MinimizeBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
-    	MinimizeBtn.TextSize = 14.000
-    	MinimizeBtn.BorderSizePixel = 0
-    	MinimizeBtn.AutoButtonColor = false
     
     	MinimizeIcon.Name = "MinimizeLabel"
     	MinimizeIcon.Parent = MinimizeBtn
@@ -178,22 +165,10 @@ function lib:Window(text, preset, closebind)
     	MinimizeIcon.Image = "http://www.roblox.com/asset/?id=6035067836"
     	MinimizeIcon.ImageColor3 = Color3.fromRGB(220, 221, 222)
 
-MinimizeBtn.MouseEnter:Connect(
-		function()
-			MinimizeBtn.BackgroundColor3 = Color3.fromRGB(40, 43, 46)
-		end
-	)
-
-	MinimizeBtn.MouseLeave:Connect(
-		function()
-			MinimizeBtn.BackgroundColor3 = Color3.fromRGB(32, 34, 37)
-		end
-	)
-
-	MinimizeBtn.MouseButton1Click:Connect(
+	MinimizeIcon.MouseButton1Click:Connect(
 		function()
 			if minimized == false then
-				MainFrame:TweenSize(
+				Main:TweenSize(
 					UDim2.new(0, 681, 0, 22),
 					Enum.EasingDirection.Out,
 					Enum.EasingStyle.Quart,
@@ -201,7 +176,7 @@ MinimizeBtn.MouseEnter:Connect(
 					true
 				)
 			else
-				MainFrame:TweenSize(
+				Main:TweenSize(
 					UDim2.new(0, 681, 0, 396),
 					Enum.EasingDirection.Out,
 					Enum.EasingStyle.Quart,
