@@ -136,7 +136,7 @@ function lib:Window(text, preset, closebind)
     Title.TextXAlignment = Enum.TextXAlignment.Left
 
     UserHead.Name = "MinimizeLabel"
-    UserHead.Parent = MinimizeBtn
+    UserHead.Parent = Main
     UserHead.BackgroundColor3 = Color3.fromRGB(41, 41, 41)
     UserHead.BackgroundTransparency = 1.000
     UserHead.Position = UDim2.new(10, 0, 0, 40)
