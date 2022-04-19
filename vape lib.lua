@@ -93,7 +93,7 @@ function lib:Window(text, preset, closebind)
     local Main = Instance.new("Frame")
     local TabHold = Instance.new("Frame")
     local TabHoldLayout = Instance.new("UIListLayout")
-	local MinimizeBtn = Instance.new("ImageLabel")
+	local MinimizeBtn = Instance.new("TextButton")
     local MinimizeIcon = Instance.new("ImageLabel")
     local Title = Instance.new("TextLabel")
     local Ign = Instance.new("TextLabel")
@@ -156,6 +156,19 @@ function lib:Window(text, preset, closebind)
     Ign.TextSize = 12.000
     Ign.TextXAlignment = Enum.TextXAlignment.Left
     
+   MinimizeBtn.Name = "MinimizeButton"
+	MinimizeBtn.Parent = Main
+	MinimizeBtn.BackgroundColor3 = Color3.fromRGB(32, 34, 37)
+	MinimizeBtn.BackgroundTransparency = 0
+	MinimizeBtn.Position = UDim2.new(0, 510, -0, 40)
+	MinimizeBtn.Size = UDim2.new(0, 32, 0, 32)
+	MinimizeBtn.Font = Enum.Font.Gotham
+	MinimizeBtn.Text = ""
+	MinimizeBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
+	MinimizeBtn.TextSize = 14.000
+	MinimizeBtn.BorderSizePixel = 0
+	MinimizeBtn.AutoButtonColor = false
+    
     	MinimizeIcon.Name = "MinimizeLabel"
     	MinimizeIcon.Parent = MinimizeBtn
     	MinimizeIcon.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -165,7 +178,7 @@ function lib:Window(text, preset, closebind)
     	MinimizeIcon.Image = "http://www.roblox.com/asset/?id=6035067836"
     	MinimizeIcon.ImageColor3 = Color3.fromRGB(220, 221, 222)
 
-	MinimizeIcon.MouseButton1Click:Connect(
+	MinimizeBtn.MouseButton1Click:Connect(
 		function()
 			if minimized == false then
 				Main:TweenSize(
