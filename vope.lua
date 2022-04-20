@@ -443,7 +443,7 @@ DragFrame.Name = "DragFrame"
         end
 
 MinimizeBtn.MouseButton1Click:Connect(function()
-   if minimized == true then do
+   if minimized == false then do
       for i, v in next, TabFolder:GetChildren() do
                        if v.Name == "Tab" then
                            v.Visible = false
@@ -461,7 +461,7 @@ MinimizeBtn.MouseButton1Click:Connect(function()
                    end
       end
       end
-      elseif minimized == false then do
+      elseif minimized == true then do
    Main:TweenSize(UDim2.new(0, 560, 0, 320),
  Enum.EasingDirection.Out,
  Enum.EasingStyle.Quart,
