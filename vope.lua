@@ -441,48 +441,55 @@ DragFrame.Name = "DragFrame"
             TabTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
             Tab.Visible = true
         end
-
+------Minimize GUI
 MinimizeBtn.MouseButton1Click:Connect(function()
-   if minimized == false then do
-         print("nice")
-      for i, v in next, TabFolder:GetChildren() do
-                       if v.Name == "Tab" then
-                           v.Visible = false
-                       end
-                   for i, v in next, TabHold:GetChildren() do
-                       if v.Name == "TabBtn" then 
-                          v.Visible = false
-   		      Main:TweenSize(
-   	UDim2.new(0, 560, 0, 41),
-   					Enum.EasingDirection.Out,
-   					Enum.EasingStyle.Quart,
-   					.3,
-   					true)
-                       end
-                   end
-      end
-      end
-      else 
-       print("nice 2")
-   Main:TweenSize(UDim2.new(0, 560, 0, 320),
- Enum.EasingDirection.Out,
- Enum.EasingStyle.Quart,
- .3, 
- true)
-                       
-   		for i, v in next, TabFolder:GetChildren() do
-                       if v.Name == "Tab" then
-                           v.Visible = true
-                       end
-                   for i, v in next, TabHold:GetChildren() do
-                       if v.Name == "TabBtn" then 
-                          v.Visible = true
-       minimized = not minimized
-       end
-    end
-end
-end
-end)
+if minimized == false then
+				Main:TweenSize(
+					UDim2.new(0, 501, 0, 22),
+					Enum.EasingDirection.Out,
+					Enum.EasingStyle.Quart,
+					.3,
+					true
+				)
+-----Tab Folder 0
+		for i, v in next, TabFolder:GetChildren() do 
+			if v.Name == "Tab" 
+			then
+			   v.Visible = false
+			   end
+		end
+-----Tab Hold 0
+		for i, v in next, Main:GetChildren() do 
+			if v.Name == "TabHold" 
+			then
+			   v.Visible = false
+			   end
+		end
+			else
+				Main:TweenSize(
+					UDim2.new(0, 56, 0, 320),
+					Enum.EasingDirection.Out,
+					Enum.EasingStyle.Quart,
+					.3,
+					true
+				)
+-----Tab Folder
+		for i, v in next, TabFolder:GetChildren() do 
+			if v.Name == "Tab" 
+			then
+			   v.Visible = true
+			   end
+		end
+-----Tab Hold
+	   for i, v in next, Main:GetChildren() do
+	      if v.Name == "TabHold"
+	      then
+	         v.Visible = true
+	         end
+         end
+			minimized = not minimized
+			end
+		end)
 		   
         TabBtn.MouseButton1Click:Connect(
             function()
