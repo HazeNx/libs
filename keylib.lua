@@ -282,8 +282,8 @@ coreGUIFuncs.newCreateGUI = function(name, pos, parent, colors)
 	});
 	
 	local UserCircle = coreFuncs.addInstance("ImageLabel", {
-	["Name"] = "UserImage",
-   ["Parent"] = openNav,
+	 ["Name"] = "UserImage",
+   ["Parent"] = NavButton,
    ["BackgroundColor3"] = Color3.fromRGB(255, 255, 255),
    ["BackgroundTransparency"] = 1.000,
    ["Size"] = UDim2.new(0, 28, 0, 28),
