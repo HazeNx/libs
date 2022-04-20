@@ -224,13 +224,13 @@ coreGUIFuncs.newCreateGUI = function(name, pos, parent, colors)
 	coreFuncs.addInstance("TextLabel", {
 		["Name"] = "UIName",
 		["BackgroundTransparency"] = 1,
-		["TextColor3"] = Color3.fromRGB(255,255,255),
+		["TextColor3"] = Color3.fromRGB(255,166,13),
 		["AnchorPoint"] = Vector2.new(1,0.5),
 		["Font"] = Enum.Font.GothamSemibold,
 		["Position"] = UDim2.new(0, 240, 0, 25),
 		["Text"] = name,
 		["Size"] = UDim2.new(0, 200, 0, 30),
-		["TextSize"] = 15.000,
+		["TextSize"] = 12.000,
 		["TextWrapped"] = true,
 		["ZIndex"] = 5,
 		["TextXAlignment"] = Enum.TextXAlignment.Left,
@@ -240,10 +240,10 @@ coreGUIFuncs.newCreateGUI = function(name, pos, parent, colors)
 	coreFuncs.addInstance("TextLabel", {
 		["Name"] = "Titol",
 		["BackgroundTransparency"] = 1,
-		["TextColor3"] = Color3.fromRGB(255,166,13),
+		["TextColor3"] = Color3.fromRGB(255,255,255),
 		["AnchorPoint"] = Vector2.new(1,0.5),
 		["Font"] = Enum.Font.GothamSemibold,
-		["Position"] = UDim2.new(0, 240, 0, 15),
+		["Position"] = UDim2.new(0, 240, 0, 10),
 		["Text"] = "Key System",
 		["Size"] = UDim2.new(0, 200, 0, 30),
 		["TextSize"] = 17.000,
@@ -259,7 +259,7 @@ coreGUIFuncs.newCreateGUI = function(name, pos, parent, colors)
 		["BackgroundColor3"] = Color3.fromRGB(255, 255, 255),
 		["BackgroundTransparency"] = 1.000,
 		["BorderSizePixel"] = 0,
-		["Position"] = UDim2.new(0, 240, 0, 23),
+		["Position"] = UDim2.new(0, 325, 0, 16),
 		["Size"] = UDim2.new(0, 15, 0, 15),
 		["Visible"] = true,
 		["ZIndex"] = 4,
@@ -267,7 +267,7 @@ coreGUIFuncs.newCreateGUI = function(name, pos, parent, colors)
 		["Parent"] = topFrame
 	});
 
-	local openNav = coreFuncs.addInstance("ImageButton", {
+	local openNav = coreFuncs.addInstance("ImageLabel", {
 		["Name"] = "NavButton",
 		["AnchorPoint"] = Vector2.new(0.5, 0.5),
 		["BackgroundColor3"] = Color3.fromRGB(255, 255, 255),
