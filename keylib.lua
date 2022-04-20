@@ -258,10 +258,10 @@ coreFuncs.addInstance("TextLabel", {
 		["TextColor3"] = Color3.fromRGB(255,255,255),
 		["AnchorPoint"] = Vector2.new(1,0.5),
 		["Font"] = Enum.Font.GothamSemibold,
-		["Position"] = UDim2.new(0, 210, 0, 150),
-		["Text"] = "Powerd by Lunar API",
+		["Position"] = UDim2.new(0, 210, 0, 140),
+		["Text"] = "Powered by Lunar API",
 		["Size"] = UDim2.new(0, 200, 0, 30),
-		["TextSize"] = 15.000,
+		["TextSize"] = 10.000,
 		["TextWrapped"] = true,
 		["ZIndex"] = 5,
 		["TextXAlignment"] = Enum.TextXAlignment.Left,
@@ -298,12 +298,13 @@ coreFuncs.addInstance("TextLabel", {
 	
 	local UserCircle = coreFuncs.addInstance("ImageLabel", {
 	 ["Name"] = "UserImage",
-   ["Parent"] = NavButton,
+   ["Parent"] = openNav,
+   ["Position"] = UDim2.new(0.05, 0, 0.51, 0),
    ["BackgroundColor3"] = Color3.fromRGB(255, 255, 255),
    ["BackgroundTransparency"] = 1.000,
    ["Size"] = UDim2.new(0, 28, 0, 28),
-   ["Image"] = "rbxassetid://4031889928",
-   ["ImageColor3"] = Color3.fromRGB(28,41,56)
+   ["Image"] = "4031889928",
+   ["ImageColor3"] = Color3.fromRGB(28,41,58)
 });
 	
 	local navCorner = coreFuncs.addInstance("UICorner", {
