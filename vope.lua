@@ -90,13 +90,14 @@ function lib:Window(text, preset, closebind)
     PresetColor = preset or Color3.fromRGB(44, 120, 224)
     fs = false
     local minimized = false
+    local hide420 = true
     local Main = Instance.new("Frame")
     local TabHold = Instance.new("Frame")
     local TabHoldLayout = Instance.new("UIListLayout")
 	local MinimizeBtn = Instance.new("TextButton")
     local MinimizeIcon = Instance.new("ImageLabel")
     local MonkIcon = Instance.new("ImageLabel")
-    local HideGUI = Instance.new("ImageButton")
+    local HideGUI = Instance.new("TextButton")
     local Title = Instance.new("TextLabel")
     local Ign = Instance.new("TextLabel")
     local UserCircleImage = Instance.new("ImageLabel")
@@ -198,16 +199,17 @@ function lib:Window(text, preset, closebind)
    
    HideGUI.Name = "Tuglos"
    HideGUI.Parent = ui
-	 HideGUI.BackgroundColor3 = Color3.fromRGB(27, 27, 27)
-	 HideGUI.BackgroundTransparency = 0
-	 HideGUI.Position = UDim2.new(0, 510, -0, 10)
-	 HideGUI.Size = UDim2.new(0, 28, 0, 22)
-	 HideGUI.Font = Enum.Font.Gotham
-	 HideGUI.Text = ""
-	 HideGUI.TextColor3 = Color3.fromRGB(255, 255, 255)
-	 HideGUI.TextSize = 14.000
-	 HideGUI.BorderSizePixel = 0
-	 HideGUI.AutoButtonColor = false
+	HideGUI.BackgroundColor3 = Color3.fromRGB(27, 27, 27)
+	HideGUI.BackgroundTransparency = 0
+	HideGUI.Position = UDim2.new(0, 50, -0, 40)
+	HideGUI.Size = UDim2.new(0, 40, 0, 40)
+	HideGUI.Font = Enum.Font.Gotham
+	HideGUI.Text = ""
+	HideGUI.TextColor3 = Color3.fromRGB(255, 255, 255)
+	HideGUI.TextSize = 14.000
+	HideGUI.BorderSizePixel = 0
+	HideGUI.Visible = false
+	HideGUI.AutoButtonColor = false
    
    TuglosCorner.CornerRadius = UDim.new(0, 5)
    TuglosCorner.Name = "TuglosCorner"
@@ -217,18 +219,20 @@ function lib:Window(text, preset, closebind)
    MonkIcon.Parent = HideGUI
    MonkIcon.BackgroundColor3 = Color3.fromRGB(51, 51, 51)
    MonkIcon.BackgroundTransparency = 1.000
-   MonkIcom.Position = UDim2.new(0, 0, 0, 0)
-   MonkIcon.Size = UDim2.new(0, 32, 0, 32)
+   MonkIcon.Position = UDim2.new(0, 10, 0, 20)
+   MonkIcon.Size = UDim2.new(0, 40, 0, 40)
    MonkIcon.Image = "rbxassetid://8825654232"
    MonkIcon.ImageColor3 = Color3.fromRGB(220, 221, 222)
    
    MinimizeBtn.MouseButton1Click:Connect(function()
+        if minimized == false then
           Main.Visible = false
           HideGUI.Visible = true
+        end
    end)
   
    HideGUI.MouseButton1Click:Connect(function()
-       if Main.Visible == false then
+       if hide420 == true then
           Main.Visible = true
           HideGUI.Visible = false
         end
