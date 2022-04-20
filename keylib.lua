@@ -188,7 +188,7 @@ coreGUIFuncs.newCreateGUI = function(name, pos, parent, colors)
 		["Position"] = pos,
 		["Name"] = "MainFrame",
 		["AnchorPoint"] = Vector2.new(0.5, 0.5),
-		["Size"] = UDim2.new(0, 350, 0, 270),
+		["Size"] = UDim2.new(0, 350, 0, 150),
 		["ClipsDescendants"] = true,
 		["BorderSizePixel"] = 0,
 		["BackgroundColor3"] = colors.Primary,
@@ -209,7 +209,6 @@ coreGUIFuncs.newCreateGUI = function(name, pos, parent, colors)
 	});
 
 	coreFuncs.roundify(topFrame);
-
 
 	coreFuncs.addInstance("Frame", {
 		["Size"] = UDim2.new(1, 0, 0, 4),
@@ -247,6 +246,22 @@ coreGUIFuncs.newCreateGUI = function(name, pos, parent, colors)
 		["Text"] = "Key System",
 		["Size"] = UDim2.new(0, 200, 0, 30),
 		["TextSize"] = 17.000,
+		["TextWrapped"] = true,
+		["ZIndex"] = 5,
+		["TextXAlignment"] = Enum.TextXAlignment.Left,
+		["Parent"] = topFrame
+	});
+
+coreFuncs.addInstance("TextLabel", {
+		["Name"] = "Powered",
+		["BackgroundTransparency"] = 1,
+		["TextColor3"] = Color3.fromRGB(255,255,255),
+		["AnchorPoint"] = Vector2.new(1,0.5),
+		["Font"] = Enum.Font.GothamSemibold,
+		["Position"] = UDim2.new(0, 210, 0, 150),
+		["Text"] = "Powerd by Lunar API",
+		["Size"] = UDim2.new(0, 200, 0, 30),
+		["TextSize"] = 15.000,
 		["TextWrapped"] = true,
 		["ZIndex"] = 5,
 		["TextXAlignment"] = Enum.TextXAlignment.Left,
