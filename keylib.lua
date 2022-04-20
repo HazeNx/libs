@@ -282,7 +282,7 @@ coreFuncs.addInstance("TextLabel", {
 		["Parent"] = topFrame
 	});
 
-	local openNav = coreFuncs.addInstance("ImageLabel", {
+	local openNav = coreFuncs.addInstance("ImageButton", {
 		["Name"] = "NavButton",
 		["AnchorPoint"] = Vector2.new(0.5, 0.5),
 		["BackgroundColor3"] = Color3.fromRGB(255, 255, 255),
@@ -299,7 +299,7 @@ coreFuncs.addInstance("TextLabel", {
 	local UserCircle = coreFuncs.addInstance("ImageLabel", {
 	 ["Name"] = "UserImage",
    ["Parent"] = openNav,
-   ["Position"] = UDim2.new(0.05, 0, 0.51, 0),
+   ["Position"] = UDim2.new(0, 0, 0, 0),
    ["BackgroundColor3"] = Color3.fromRGB(255, 255, 255),
    ["BackgroundTransparency"] = 1.000,
    ["Size"] = UDim2.new(0, 28, 0, 28),
@@ -1197,7 +1197,14 @@ ezlib.create = function(name, parent, pos, theme, gameID, deleteOldGUI)
 			button.callback = callback;
 
 			local buttonInstance = coreGUIFuncs.newButton(tabInstance.window, name, theme);
-			buttonInstance.button.MouseButton1Click:Connect(function() button.fireCallback() end);
+			buttonInstance.button.MouseButton1Click:Connect(function() button.fireCallback() MainFrame.TweenPosition(
+			        UDim2.new(0,180.75,0,317)
+			        "InOut",
+			        "Quad",
+			        1,
+			        false
+			        )
+			  end);
 
 			button.changeCallback = function(callback)
 				button.callback = callback;
