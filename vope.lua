@@ -95,11 +95,15 @@ function lib:Window(text, preset, closebind)
     local TabHoldLayout = Instance.new("UIListLayout")
 	local MinimizeBtn = Instance.new("TextButton")
     local MinimizeIcon = Instance.new("ImageLabel")
+    local MonkIcon = Instance.new("ImageLabel")
+    local HideGUI = Instance.new("ImageButton")
     local Title = Instance.new("TextLabel")
     local Ign = Instance.new("TextLabel")
     local UserCircleImage = Instance.new("ImageLabel")
     local UserHead = Instance.new("ImageLabel")
     local TabFolder = Instance.new("Folder")
+    local MainCorner = Instance.new("UICorner")
+    local TuglosCorner = Instance.new("UICorner")
     local DragFrame = Instance.new("Frame")
 
     Main.Name = "Main"
@@ -111,6 +115,10 @@ function lib:Window(text, preset, closebind)
     Main.Size = UDim2.new(0, 0, 0, 320)
     Main.ClipsDescendants = true
     Main.Visible = true
+
+    MainCorner.CornerRadius = UDim.new(0, 5)
+    MainCorner.Name = "MainCorner"
+    MainCorner.Parent = Main
 
     TabHold.Name = "TabHold"
     TabHold.Parent = Main
@@ -125,10 +133,10 @@ function lib:Window(text, preset, closebind)
     TabHoldLayout.Padding = UDim.new(0, 11)
 
     Title.Name = "Title"
-    Title.Parent = Main
+    Title.Parent = DragFrame
     Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
     Title.BackgroundTransparency = 1.000
-    Title.Position = UDim2.new(0, 50, 0, 5)
+    Title.Position = UDim2.new(0, 50, 0, 3)
     Title.Size = UDim2.new(0, 200, 0, 23)
     Title.Font = Enum.Font.GothamSemibold
     Title.Text = text
@@ -136,7 +144,7 @@ function lib:Window(text, preset, closebind)
     Title.TextSize = 20.000
     Title.TextXAlignment = Enum.TextXAlignment.Left
 
-DragFrame.Name = "DragFrame"
+    DragFrame.Name = "DragFrame"
     DragFrame.Parent = Main
     DragFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
     DragFrame.BackgroundTransparency = 1.000
@@ -156,47 +164,76 @@ DragFrame.Name = "DragFrame"
     UserHead.ImageColor3 = Color3.fromRGB(220, 221, 222)
 
    UserCircleImage.Name = "UserImage"
-	UserCircleImage.Parent = UserHead
-	UserCircleImage.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	UserCircleImage.BackgroundTransparency = 1.000
-	UserCircleImage.Size = UDim2.new(0, 32, 0, 32)
-	UserCircleImage.Image = "rbxassetid://4031889928"
-	UserCircleImage.ImageColor3 = Color3.fromRGB(30, 30, 30)
+   UserCircleImage.Parent = UserHead
+   UserCircleImage.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+   UserCircleImage.BackgroundTransparency = 1.000
+   UserCircleImage.Size = UDim2.new(0, 32, 0, 32)
+   UserCircleImage.Image = "rbxassetid://4031889928"
+   UserCircleImage.ImageColor3 = Color3.fromRGB(30, 30, 30)
 
-    Ign.Name = "IGN"
-    Ign.Parent = DragFrame
-    Ign.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-    Ign.BackgroundTransparency = 1.000
-    Ign.Position = UDim2.new(0, 51, 0, 20)
-    Ign.Size = UDim2.new(0, 200, 0, 25)
-    Ign.Font = Enum.Font.GothamSemibold
-    Ign.Text = game.Players.LocalPlayer.Name.."#"..tostring(math.random(1000,9999))
-    Ign.TextColor3 = Color3.fromRGB(255, 166, 13)
-    Ign.TextSize = 12.000
-    Ign.TextXAlignment = Enum.TextXAlignment.Left
+   Ign.Name = "IGN"
+   Ign.Parent = DragFrame
+   Ign.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+   Ign.BackgroundTransparency = 1.000
+   Ign.Position = UDim2.new(0, 51, 0, 16)
+   Ign.Size = UDim2.new(0, 200, 0, 25)
+   Ign.Font = Enum.Font.GothamSemibold
+   Ign.Text = game.Players.LocalPlayer.Name.."#"..tostring(math.random(1000,9999))
+   Ign.TextColor3 = Color3.fromRGB(255, 166, 13)
+   Ign.TextSize = 12.000
+   Ign.TextXAlignment = Enum.TextXAlignment.Left
     
    MinimizeBtn.Name = "MinimizeButton"
-	MinimizeBtn.Parent = Main
-	MinimizeBtn.BackgroundColor3 = Color3.fromRGB(32, 34, 37)
-	MinimizeBtn.BackgroundTransparency = 0
-	MinimizeBtn.Position = UDim2.new(0, 510, -0, 10)
-	MinimizeBtn.Size = UDim2.new(0, 28, 0, 22)
-	MinimizeBtn.Font = Enum.Font.Gotham
-	MinimizeBtn.Text = ""
-	MinimizeBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
-	MinimizeBtn.TextSize = 14.000
-	MinimizeBtn.BorderSizePixel = 0
-	MinimizeBtn.AutoButtonColor = false
-    
-    	MinimizeIcon.Name = "MinimizeLabel"
-    	MinimizeIcon.Parent = MinimizeBtn
-    	MinimizeIcon.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-    	MinimizeIcon.BackgroundTransparency = 1.000
-    	MinimizeIcon.Position = UDim2.new(0, 0, 0, 0)
-    	MinimizeIcon.Size = UDim2.new(0, 17, 0, 17)
-    	MinimizeIcon.Image = "http://www.roblox.com/asset/?id=6035067836"
-    	MinimizeIcon.ImageColor3 = Color3.fromRGB(220, 221, 222)
-
+   MinimizeBtn.Parent = Main
+	 MinimizeBtn.BackgroundColor3 = Color3.fromRGB(255, 166, 13)
+	 MinimizeBtn.BackgroundTransparency = 0
+	 MinimizeBtn.Position = UDim2.new(0, 510, -0, 10)
+	 MinimizeBtn.Size = UDim2.new(0, 28, 0, 22)
+	 MinimizeBtn.Font = Enum.Font.Gotham
+	 MinimizeBtn.Text = "—"
+	 MinimizeBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
+	 MinimizeBtn.TextSize = 14.000
+	 MinimizeBtn.BorderSizePixel = 0
+	 MinimizeBtn.AutoButtonColor = false
+   
+   HideGUI.Name = "Tuglos"
+   HideGUI.Parent = ui
+	 HideGUI.BackgroundColor3 = Color3.fromRGB(27, 27, 27)
+	 HideGUI.BackgroundTransparency = 0
+	 HideGUI.Position = UDim2.new(0, 510, -0, 10)
+	 HideGUI.Size = UDim2.new(0, 28, 0, 22)
+	 HideGUI.Font = Enum.Font.Gotham
+	 HideGUI.Text = ""
+	 HideGUI.TextColor3 = Color3.fromRGB(255, 255, 255)
+	 HideGUI.TextSize = 14.000
+	 HideGUI.BorderSizePixel = 0
+	 HideGUI.AutoButtonColor = false
+   
+   TuglosCorner.CornerRadius = UDim.new(0, 5)
+   TuglosCorner.Name = "TuglosCorner"
+   TuglosCorner.Parent = HideGUI
+   
+   MonkIcon.Name = "Munk"
+   MonkIcon.Parent = HideGUI
+   MonkIcon.BackgroundColor3 = Color3.fromRGB(51, 51, 51)
+   MonkIcon.BackgroundTransparency = 1.000
+   MonkIcom.Position = UDim2.new(0, 0, 0, 0)
+   MonkIcon.Size = UDim2.new(0, 32, 0, 32)
+   MonkIcon.Image = "rbxassetid://8825654232"
+   MonkIcon.ImageColor3 = Color3.fromRGB(220, 221, 222)
+   
+   MinimizeBtn.MouseButton1Click:Connect(function()
+          Main.Visible = false
+          HideGUI.Visible = true
+   end)
+  
+   HideGUI.MouseButton1Click:Connect(function()
+       if Main.Visible == false then
+          Main.Visible = true
+          HideGUI.Visible = false
+        end
+   end)
+   
     local uitoggled = false
     UserInputService.InputBegan:Connect(
         function(io, p)
@@ -441,55 +478,6 @@ DragFrame.Name = "DragFrame"
             TabTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
             Tab.Visible = true
         end
-------Minimize GUI
-MinimizeBtn.MouseButton1Click:Connect(function()
-if minimized == false then
-				Main:TweenSize(
-					UDim2.new(0, 560, 0, 41),
-					Enum.EasingDirection.Out,
-					Enum.EasingStyle.Quart,
-					.3,
-					true
-				)
------Tab Folder 0
-		for i, v in next, TabFolder:GetChildren() do 
-			if v.Name == "Tab" 
-			then
-			   v.Visible = false
-			   end
-		end
------Tab Hold 0
-		for i, v in next, Main:GetChildren() do 
-			if v.Name == "TabHold" 
-			then
-			   v.Visible = false
-			   end
-		end
-			else
-				Main:TweenSize(
-					UDim2.new(0, 560, 0, 320),
-					Enum.EasingDirection.Out,
-					Enum.EasingStyle.Quart,
-					.3,
-					true
-				)
------Tab Folder
-		for i, v in next, TabFolder:GetChildren() do 
-			if v.Name == "Tab" 
-			then
-			   v.Visible = true
-			   end
-		end
------Tab Hold
-	   for i, v in next, Main:GetChildren() do
-	      if v.Name == "TabHold"
-	      then
-	         v.Visible = true
-	         end
-         end
-			minimized = not minimized
-			end
-		end)
 		   
         TabBtn.MouseButton1Click:Connect(
             function()
