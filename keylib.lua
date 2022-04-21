@@ -298,11 +298,11 @@ coreFuncs.addInstance("TextLabel", {
 	
 	local UserCircle = coreFuncs.addInstance("ImageLabel", {
 	 ["Name"] = "Circol",
-   ["Position"] = UDim2.new(0, 22, 0, 18),
+   ["Position"] = UDim2.new(0, 0, 0, 0),
    ["BackgroundColor3"] = Color3.fromRGB(255, 255, 255),
    ["BackgroundTransparency"] = 1.000,
    ["Size"] = UDim2.new(0, 28, 0, 28),
-   ["Image"] = "4031889928",
+   ["Image"] = "rbxassetid://4031889928",
    ["ImageColor3"] = Color3.fromRGB(28,41,58),
    ["ZIndex"] = 4,
    ["Parent"] = openNav
