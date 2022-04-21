@@ -288,23 +288,23 @@ coreFuncs.addInstance("TextLabel", {
 			["BackgroundColor3"] = Color3.fromRGB(255, 255, 255),
 			["BackgroundTransparency"] = 1.000,
 			["BorderSizePixel"] = 0,
-			["Position"] = UDim2.new(0.05, 0, 0.51, 0),
+			["Position"] = UDim2.new(0, 22, 0, 18),
 			["Size"] = UDim2.new(0, 28, 0, 28),
 			["Style"] = RobloxRoundDefaultButton,
 			["ZIndex"] = 4,
-			["Image"] = "https://www.roblox.com/head-thumbnail/image?userId="..game.Players.LocalPlayer.UserId.."&width=420&height=420&format=png",
+			["Image"] = "https://www.roblox.com/headshot-thumbnail/image?userId="..game.Players.LocalPlayer.UserId.."&width=420&height=420&format=png",
 			["Parent"] = topFrame
 		});
 	
 	local UserCircle = coreFuncs.addInstance("ImageLabel", {
-	 ["Name"] = "UserImage",
-   ["Position"] = UDim2.new(0, 0, 0, 0),
+	 ["Name"] = "Circol",
+   ["Position"] = UDim2.new(0, 22, 0, 18),
    ["BackgroundColor3"] = Color3.fromRGB(255, 255, 255),
    ["BackgroundTransparency"] = 1.000,
    ["Size"] = UDim2.new(0, 28, 0, 28),
    ["Image"] = "4031889928",
    ["ImageColor3"] = Color3.fromRGB(28,41,58),
-   ["Parent"] = openNav
+   ["Parent"] = topFrame
 });
 	
 	local navCorner = coreFuncs.addInstance("UICorner", {
