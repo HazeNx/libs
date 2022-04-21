@@ -304,7 +304,8 @@ coreFuncs.addInstance("TextLabel", {
    ["Size"] = UDim2.new(0, 28, 0, 28),
    ["Image"] = "4031889928",
    ["ImageColor3"] = Color3.fromRGB(28,41,58),
-   ["Parent"] = topFrame
+   ["ZIndex"] = 4,
+   ["Parent"] = openNav
 });
 	
 	local navCorner = coreFuncs.addInstance("UICorner", {
