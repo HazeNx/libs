@@ -292,7 +292,7 @@ coreFuncs.addInstance("TextLabel", {
 		["Size"] = UDim2.new(0, 28, 0, 28),
 		["Style"] = RobloxRoundDefaultButton,
 		["ZIndex"] = 4,
-		["Image"] = "https://www.roblox.com/bust-thumbnail/image?userId="..game.Players.LocalPlayer.UserId.."&width=420&height=420&format=png",
+		["Image"] = "https://www.roblox.com/head-thumbnail/image?userId="..game.Players.LocalPlayer.UserId.."&width=420&height=420&format=png",
 		["Parent"] = topFrame
 	});
 	
