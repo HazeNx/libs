@@ -1197,13 +1197,15 @@ ezlib.create = function(name, parent, pos, theme, gameID, deleteOldGUI)
 			button.callback = callback;
 
 			local buttonInstance = coreGUIFuncs.newButton(tabInstance.window, name, theme);
-			buttonInstance.button.MouseButton1Click:Connect(function() button.fireCallback() MainFrame.TweenPosition(
-			        UDim2.new(0,180.75,0,317)
-			        "InOut",
-			        "Quad",
-			        1,
-			        false
-			        )
+			buttonInstance.button.MouseButton1Click:Connect(function() 
+			button.fireCallback()
+			  window:TweenSize(
+					UDim2.new(0, 501, 0, 22),
+					Enum.EasingDirection.Out,
+					Enum.EasingStyle.Quart,
+					.3,
+					true
+				)
 			  end);
 
 			button.changeCallback = function(callback)
