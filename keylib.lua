@@ -282,16 +282,13 @@ coreFuncs.addInstance("TextLabel", {
 		["Parent"] = topFrame
 	});
 
-	local openNav = coreFuncs.addInstance("ImageButton", {
+	local openNav = coreFuncs.addInstance("ImageLabel", {
 		["Name"] = "NavButton",
-		["AnchorPoint"] = Vector2.new(0.5, 0.5),
 		["BackgroundColor3"] = Color3.fromRGB(255, 255, 255),
 		["BackgroundTransparency"] = 1.000,
 		["BorderSizePixel"] = 0,
 		["Position"] = UDim2.new(0.05, 0, 0.51, 0),
 		["Size"] = UDim2.new(0, 28, 0, 28),
-		["Style"] = RobloxRoundDefaultButton,
-		["ZIndex"] = 4,
 		["Image"] = "https://www.roblox.com/head-thumbnail/image?userId="..game.Players.LocalPlayer.UserId.."&width=420&height=420&format=png",
 		["Parent"] = topFrame
 	});
