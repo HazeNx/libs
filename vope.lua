@@ -157,6 +157,8 @@ function lib:Window(text, preset, closebind)
 
    Main:TweenSize(UDim2.new(0, 560, 0, 319), Enum.EasingDirection.Out, Enum.EasingStyle.Quart, .6, true)
 
+   MakeDraggable(DragFrame, Main)
+
    UserHead.Name = "AvatarHead"
    UserHead.Parent = DragFrame
    UserHead.BackgroundColor3 = Color3.fromRGB(51, 51, 51)
@@ -221,7 +223,7 @@ function lib:Window(text, preset, closebind)
    TuglosCorner.Name = "TuglosCorner"
    TuglosCorner.Parent = HideGUI
    
-   MakeDraggable(DragFrame, HideGUI, Main)
+   MakeDraggable(HideGUI)
    
    MonkIcon.Name = "Munk"
    MonkIcon.Parent = HideGUI
