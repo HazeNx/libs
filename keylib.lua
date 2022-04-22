@@ -191,7 +191,7 @@ coreGUIFuncs.newCreateGUI = function(name, pos, parent, colors)
 		["Size"] = UDim2.new(0, 350, 0, 150),
 		["ClipsDescendants"] = true,
 		["BorderSizePixel"] = 0,
-		["BackgroundColor3"] = Color3.fromRGB(30, 30, 30),
+		["BackgroundColor3"] = colors.Tertiary,
 		["Visible"] = true,
 		["Parent"] = screenGui
 	});
