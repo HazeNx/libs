@@ -201,7 +201,7 @@ coreGUIFuncs.newCreateGUI = function(name, pos, parent, colors)
 
 	local topFrame = coreFuncs.addInstance("Frame", {
 		["Name"] = "TopFrame",
-		["BackgroundColor3"] = Color3.fromRGB(25, 25, 25),
+		["BackgroundColor3"] = colors.Tertiary,
 		["BorderSizePixel"] = 0,
 		["Size"] = UDim2.new(1, 0, 0, 34),
 		["ZIndex"] = 3,
@@ -567,7 +567,7 @@ coreGUIFuncs.newKeybind = function(tabWindow, name, state, colors)
 
 	local button = coreFuncs.addInstance("TextButton", {
 		["AnchorPoint"] = Vector2.new(1, 0.5),
-		["BackgroundColor3"] = colors.Primary,
+		["BackgroundColor3"] = colors.Tertiary,
 		["BorderSizePixel"] = 0,
 		["Position"] = UDim2.new(1, -10, 0.5, 0),
 		["Size"] = UDim2.new(0, 87, 0, 20),
