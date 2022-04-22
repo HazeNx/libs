@@ -106,6 +106,7 @@ function lib:Window(text, preset, closebind)
     local UserCircleImage = Instance.new("ImageLabel")
     local UserHead = Instance.new("ImageLabel")
     local TabFolder = Instance.new("Folder")
+    local DragCorner = Instance.new("UICorner")
     local MainCorner = Instance.new("UICorner")
     local TuglosCorner = Instance.new("UICorner")
     local CockCorner = Instance.new("UICorner")
@@ -151,13 +152,18 @@ function lib:Window(text, preset, closebind)
 
    DragFrame.Name = "DragFrame"
    DragFrame.Parent = Main
-   DragFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-   DragFrame.BackgroundTransparency = 1.000
+   DragFrame.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+   DragFrame.BackgroundTransparency = 0.000
    DragFrame.Size = UDim2.new(0, 560, 0, 41)
 
-   Main:TweenSize(UDim2.new(0, 560, 0, 319), Enum.EasingDirection.Out, Enum.EasingStyle.Quart, .6, true)
+   DragCorner.CornerRadius = UDim.new(0, 5)
+   DragCorner.Name = "DragCorner"
+   DragCorner.Parent = DragFrame
 
+   Main:TweenSize(UDim2.new(0, 560, 0, 319), Enum.EasingDirection.Out, Enum.EasingStyle.Quart, .6, true)
+   
    MakeDraggable(DragFrame, Main)
+   
 
    UserHead.Name = "AvatarHead"
    UserHead.Parent = DragFrame
