@@ -223,7 +223,7 @@ function lib:Window(text, preset, closebind)
    TuglosCorner.Name = "TuglosCorner"
    TuglosCorner.Parent = HideGUI
    
-   MakeDraggable(Main, HideGUI)
+   MakeDraggable(HideGUI, ui)
    
    MonkIcon.Name = "Munk"
    MonkIcon.Parent = HideGUI
