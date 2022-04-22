@@ -181,7 +181,7 @@ coreGUIFuncs.newCreateGUI = function(name, pos, parent, colors)
 
 	local screenGui = coreFuncs.addInstance("ScreenGui", {
 		["Parent"] = parent,
-		["Name"] = "EzLib"
+		["Name"] = "ezlib"
 	});
 
 	local window = coreFuncs.addInstance("Frame", {
@@ -567,7 +567,7 @@ coreGUIFuncs.newKeybind = function(tabWindow, name, state, colors)
 
 	local button = coreFuncs.addInstance("TextButton", {
 		["AnchorPoint"] = Vector2.new(1, 0.5),
-		["BackgroundColor3"] = colors.Tertiary,
+		["BackgroundColor3"] = colors.Primary,
 		["BorderSizePixel"] = 0,
 		["Position"] = UDim2.new(1, -10, 0.5, 0),
 		["Size"] = UDim2.new(0, 87, 0, 20),
@@ -640,7 +640,7 @@ coreGUIFuncs.newDropdown = function(tabWindow, dropdownContainer, name, colors, 
 
 	local topFrame = coreFuncs.addInstance("Frame", {
 		["Name"] = "TopFrame",
-		["BackgroundColor3"] = UDim2.new(25, 25, 25),
+		["BackgroundColor3"] = colors.Tertiary,
 		["BorderSizePixel"] = 0,
 		["Size"] = UDim2.new(1, 0, 0, 34),
 		["ZIndex"] = 3,
@@ -756,7 +756,7 @@ coreGUIFuncs.newDiv = function(tabWindow, colors)
 
 	local div = coreFuncs.addInstance("TextLabel", {
 		["AnchorPoint"] = Vector2.new(0.5, 0.5),
-		["BackgroundColor3"] = colors.Tertiary,
+		["BackgroundColor3"] = colors.Primary,
 		["Position"] = UDim2.new(0.5, 0, 0.5, 0),
 		["Size"] = UDim2.new(0, coreVars.elementX + 10, 0, 5),
 		["Font"] = Enum.Font.GothamSemibold,
@@ -1134,11 +1134,11 @@ ezlib.create = function(name, parent, pos, theme, gameID, deleteOldGUI)
 	if deleteOldGUI == nil then deleteOldGUI = true; end
 	if deleteOldGUI then
 		for i,v in pairs(game.CoreGui:GetChildren()) do
-			if v.Name == "EzLib" then v:Destroy(); end
+			if v.Name == "ezlib" then v:Destroy(); end
 			if v.Name == "dropdownContainer" then v:Destroy(); end
 		end
 		for i,v in pairs(game.Players.LocalPlayer.PlayerGui:GetChildren()) do
-			if v.Name == "EzLib" then v:Destroy(); end
+			if v.Name == "ezlib" then v:Destroy(); end
 			if v.Name == "dropdownContainer" then v:Destroy(); end
 		end
 	end
@@ -1171,8 +1171,8 @@ ezlib.create = function(name, parent, pos, theme, gameID, deleteOldGUI)
 		table.insert(_G.EzHubExclusives, mainGUI.screengui);
 	end
 
-	mainGUI.closenav.MouseButton1Click:Connect(function() if game:GetService("CoreGui"):FindFirstChild("EzLib") then
-	           game:GetService("CoreGui")["EzLib"]:Destroy();
+	mainGUI.closenav.MouseButton1Click:Connect(function() if game:GetService("CoreGui"):FindFirstChild("ezlib") then
+	           game:GetService("CoreGui")["ezlib"]:Destroy();
 	       end
 	end)
 	-- For toggling
