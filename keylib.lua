@@ -191,7 +191,7 @@ coreGUIFuncs.newCreateGUI = function(name, pos, parent, colors)
 		["Size"] = UDim2.new(0, 350, 0, 150),
 		["ClipsDescendants"] = true,
 		["BorderSizePixel"] = 0,
-		["BackgroundColor3"] = colors.Primary,
+		["BackgroundColor3"] = UDim2.new(30, 30, 30),
 		["Visible"] = true,
 		["Parent"] = screenGui
 	});
@@ -640,7 +640,7 @@ coreGUIFuncs.newDropdown = function(tabWindow, dropdownContainer, name, colors, 
 
 	local topFrame = coreFuncs.addInstance("Frame", {
 		["Name"] = "TopFrame",
-		["BackgroundColor3"] = colors.Tertiary,
+		["BackgroundColor3"] = UDim2.new(25, 25, 25),
 		["BorderSizePixel"] = 0,
 		["Size"] = UDim2.new(1, 0, 0, 34),
 		["ZIndex"] = 3,
