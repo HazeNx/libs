@@ -181,18 +181,6 @@ function lib:Window(text, preset, closebind)
    UserCircleImage.Size = UDim2.new(0, 32, 0, 32)
    UserCircleImage.Image = "rbxassetid://4031889928"
    UserCircleImage.ImageColor3 = Color3.fromRGB(25, 25, 25)
-
-   Ign.Name = "IGN"
-   Ign.Parent = DragFrame
-   Ign.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-   Ign.BackgroundTransparency = 1.000
-   Ign.Position = UDim2.new(0, 51, 0, 16)
-   Ign.Size = UDim2.new(0, 200, 0, 25)
-   Ign.Font = Enum.Font.GothamSemibold
-   Ign.Text = game.Players.LocalPlayer.Name.."#"..tostring(math.random(1000,9999))
-   Ign.TextColor3 = PresetColor
-   Ign.TextSize = 12.000
-   Ign.TextXAlignment = Enum.TextXAlignment.Left
     
    MinimizeBtn.Name = "MinimizeButton"
    MinimizeBtn.Parent = Main
@@ -453,6 +441,18 @@ function lib:Window(text, preset, closebind)
         TabTitle.TextColor3 = Color3.fromRGB(150, 150, 150)
         TabTitle.TextSize = 14.000
         TabTitle.TextXAlignment = Enum.TextXAlignment.Left
+
+         Ign.Name = "IGN"
+         Ign.Parent = DragFrame
+         Ign.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+         Ign.BackgroundTransparency = 1.000
+         Ign.Position = UDim2.new(0, 51, 0, 16)
+         Ign.Size = UDim2.new(0, 200, 0, 25)
+         Ign.Font = Enum.Font.GothamSemibold
+         Ign.Text = game.Players.LocalPlayer.Name.."#"..tostring(math.random(1000,9999))
+         Ign.TextColor3 = PresetColor
+         Ign.TextSize = 12.000
+         Ign.TextXAlignment = Enum.TextXAlignment.Left
 
         TabBtnIndicator.Name = "TabBtnIndicator"
         TabBtnIndicator.Parent = TabBtn
