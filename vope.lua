@@ -165,6 +165,18 @@ function lib:Window(text, preset, closebind)
    MakeDraggable(DragFrame, Main)
    
 
+   Ign.Name = "IGN"
+   Ign.Parent = DragFrame
+   Ign.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+   Ign.BackgroundTransparency = 1.000
+   Ign.Position = UDim2.new(0, 51, 0, 16)
+   Ign.Size = UDim2.new(0, 200, 0, 25)
+   Ign.Font = Enum.Font.GothamSemibold
+   Ign.Text = game.Players.LocalPlayer.Name.."#"..tostring(math.random(1000,9999))
+   Ign.TextColor3 = Color3.fromRGB(133, 115, 255)
+   Ign.TextSize = 12.000
+   Ign.TextXAlignment = Enum.TextXAlignment.Left
+
    UserHead.Name = "AvatarHead"
    UserHead.Parent = DragFrame
    UserHead.BackgroundColor3 = Color3.fromRGB(51, 51, 51)
@@ -442,18 +454,6 @@ function lib:Window(text, preset, closebind)
         TabTitle.TextSize = 14.000
         TabTitle.TextXAlignment = Enum.TextXAlignment.Left
 
-         Ign.Name = "IGN"
-         Ign.Parent = DragFrame
-         Ign.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-         Ign.BackgroundTransparency = 1.000
-         Ign.Position = UDim2.new(0, 51, 0, 16)
-         Ign.Size = UDim2.new(0, 200, 0, 25)
-         Ign.Font = Enum.Font.GothamSemibold
-         Ign.Text = game.Players.LocalPlayer.Name.."#"..tostring(math.random(1000,9999))
-         Ign.TextColor3 = PresetColor
-         Ign.TextSize = 12.000
-         Ign.TextXAlignment = Enum.TextXAlignment.Left
-
         TabBtnIndicator.Name = "TabBtnIndicator"
         TabBtnIndicator.Parent = TabBtn
         TabBtnIndicator.BackgroundColor3 = PresetColor
@@ -659,7 +659,7 @@ function lib:Window(text, preset, closebind)
 
             FrameToggle3.Name = "FrameToggle3"
             FrameToggle3.Parent = FrameToggle1
-            FrameToggle3.BackgroundColor3 = PresetColor
+            FrameToggle3.BackgroundColor3 = Color3.fromRGB(133, 115, 255)
             FrameToggle3.BackgroundTransparency = 1.000
             FrameToggle3.Size = UDim2.new(0, 37, 0, 18)
 
@@ -1585,7 +1585,7 @@ function lib:Window(text, preset, closebind)
 
             Label.Name = "Button"
             Label.Parent = Tab
-            Label.BackgroundColor3 = PresetColor
+            Label.BackgroundColor3 = Color3.fromRGB(133, 115, 255)
             Label.Size = UDim2.new(0, 363, 0, 42)
             Label.AutoButtonColor = false
             Label.Font = Enum.Font.SourceSans
