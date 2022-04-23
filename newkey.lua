@@ -8,10 +8,10 @@ local Mouse = LocalPlayer:GetMouse()
 local PresetColor = Color3.fromRGB(44, 120, 224)
 local CloseBind = Enum.KeyCode.RightControl
 
-local ui = Instance.new("ScreenGui")
-ui.Name = "ui"
-ui.Parent = game.CoreGui
-ui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+local keytlog = Instance.new("ScreenGui")
+keytlog.Name = "ui"
+keytlog.Parent = game.CoreGui
+keytlog.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
 coroutine.wrap(
     function()
@@ -114,7 +114,7 @@ function lib:Window(text, preset, closebind)
     local DragFrame = Instance.new("Frame")
 
     Main.Name = "Main"
-    Main.Parent = ui
+    Main.Parent = keytlog
     Main.AnchorPoint = Vector2.new(0.5, 0.5)
     Main.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
     Main.BorderSizePixel = 0
@@ -212,7 +212,7 @@ function lib:Window(text, preset, closebind)
    CockCorner.Parent = MinimizeBtn
    
    HideGUI.Name = "Tuglos"
-   HideGUI.Parent = ui
+   HideGUI.Parent = keytlog
 	HideGUI.BackgroundColor3 = Color3.fromRGB(27, 27, 27)
 	HideGUI.BackgroundTransparency = 0
 	HideGUI.Position = UDim2.new(0, 30, -0, 30)
