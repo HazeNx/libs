@@ -180,7 +180,7 @@ function lib:Window(text, preset, closebind)
    UserCircleImage.BackgroundTransparency = 1.000
    UserCircleImage.Size = UDim2.new(0, 32, 0, 32)
    UserCircleImage.Image = "rbxassetid://4031889928"
-   UserCircleImage.ImageColor3 = Color3.fromRGB(30, 30, 30)
+   UserCircleImage.ImageColor3 = Color3.fromRGB(25, 25, 25)
 
    Ign.Name = "IGN"
    Ign.Parent = DragFrame
@@ -190,7 +190,7 @@ function lib:Window(text, preset, closebind)
    Ign.Size = UDim2.new(0, 200, 0, 25)
    Ign.Font = Enum.Font.GothamSemibold
    Ign.Text = game.Players.LocalPlayer.Name.."#"..tostring(math.random(1000,9999))
-   Ign.TextColor3 = Color3.fromRGB(255, 166, 13)
+   Ign.TextColor3 = PresetColor
    Ign.TextSize = 12.000
    Ign.TextXAlignment = Enum.TextXAlignment.Left
     
@@ -1585,7 +1585,7 @@ function lib:Window(text, preset, closebind)
 
             Label.Name = "Button"
             Label.Parent = Tab
-            Label.BackgroundColor3 = Color3.fromRGB(255, 166, 13)
+            Label.BackgroundColor3 = PresetColor
             Label.Size = UDim2.new(0, 363, 0, 42)
             Label.AutoButtonColor = false
             Label.Font = Enum.Font.SourceSans
