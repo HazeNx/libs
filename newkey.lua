@@ -119,7 +119,7 @@ function lib:Window(text, preset, closebind)
     Main.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
     Main.BorderSizePixel = 0
     Main.Position = UDim2.new(0.5, 0, 0.5, 0)
-    Main.Size = UDim2.new(320, 0, 0, 250)
+    Main.Size = UDim2.new(0, 320, 0, 250)
     Main.ClipsDescendants = true
     Main.Visible = true
 
@@ -169,12 +169,12 @@ function lib:Window(text, preset, closebind)
    Pord.Parent = Main
    Pord.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
    Pord.BackgroundTransparency = 1.000
-   Pord.Position = UDim2.new(0, 130, 0, 220)
+   Pord.Position = UDim2.new(0, 90, 0, 220)
    Pord.Size = UDim2.new(0, 200, 0, 25)
    Pord.Font = Enum.Font.GothamSemibold
    Pord.Text = ("Powered by Lunar Client API")
    Pord.TextColor3 = Color3.fromRGB(133, 115, 255)
-   Pord.TextSize = 12.000
+   Pord.TextSize = 10.000
    Pord.TextXAlignment = Enum.TextXAlignment.Left
 
    UserHead.Name = "AvatarHead"
@@ -238,7 +238,7 @@ function lib:Window(text, preset, closebind)
    MonkIcon.Position = UDim2.new(0, 0, 0, 0)
    MonkIcon.Size = UDim2.new(0, 40, 0, 40)
    MonkIcon.Image = "rbxassetid://8825654232"
-   MonkIcon.ImageColor3 = Color3.fromRGB(220, 221, 222)
+   MonkIcon.ImageColor3 = Color3.fromRGB(133, 115, 255)
    
    MinimizeBtn.MouseButton1Click:Connect(function()
         if minimized == false then
@@ -481,7 +481,7 @@ function lib:Window(text, preset, closebind)
         Tab.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
         Tab.BackgroundTransparency = 1.000
         Tab.BorderSizePixel = 0
-        Tab.Position = UDim2.new(0.31400001, 0, 0.147, 0)
+        Tab.Position = UDim2.new(0, 10, 0, 50)
         Tab.Size = UDim2.new(0, 373, 0, 254)
         Tab.CanvasSize = UDim2.new(0, 0, 0, 0)
         Tab.ScrollBarThickness = 3
@@ -546,7 +546,7 @@ function lib:Window(text, preset, closebind)
             Button.Name = "Button"
             Button.Parent = Tab
             Button.BackgroundColor3 = Color3.fromRGB(34, 34, 34)
-            Button.Size = UDim2.new(0, 363, 0, 42)
+            Button.Size = UDim2.new(0, 300, 0, 42)
             Button.AutoButtonColor = false
             Button.Font = Enum.Font.SourceSans
             Button.Text = ""
@@ -1624,7 +1624,7 @@ function lib:Window(text, preset, closebind)
             Textbox.BackgroundColor3 = Color3.fromRGB(47, 47, 47)
             Textbox.ClipsDescendants = true
             Textbox.Position = UDim2.new(-0.541071415, 0, -0.532915354, 0)
-            Textbox.Size = UDim2.new(0, 363, 0, 42)
+            Textbox.Size = UDim2.new(0, 300, 0, 42)
 
             TextboxCorner.CornerRadius = UDim.new(0, 5)
             TextboxCorner.Name = "TextboxCorner"
@@ -1645,7 +1645,7 @@ function lib:Window(text, preset, closebind)
             TextboxFrame.Name = "TextboxFrame"
             TextboxFrame.Parent = TextboxTitle
             TextboxFrame.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
-            TextboxFrame.Position = UDim2.new(1.28877008, 0, 0.214285716, 0)
+            TextboxFrame.Position = UDim2.new(1, -5, 0, 10)
             TextboxFrame.Size = UDim2.new(0, 100, 0, 23)
 
             TextboxFrameCorner.CornerRadius = UDim.new(0, 5)
