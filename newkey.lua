@@ -545,7 +545,7 @@ function lib:Window(text, preset, closebind)
 
             Button.Name = "Button"
             Button.Parent = Tab
-            Button.BackgroundColor3 = Color3.fromRGB(34, 34, 34)
+            Button.BackgroundColor3 = Color3.fromRGB(133, 115, 255)
             Button.Size = UDim2.new(0, 300, 0, 42)
             Button.AutoButtonColor = false
             Button.Font = Enum.Font.SourceSans
@@ -574,7 +574,7 @@ function lib:Window(text, preset, closebind)
                     TweenService:Create(
                         Button,
                         TweenInfo.new(.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
-                        {BackgroundColor3 = Color3.fromRGB(37, 37, 37)}
+                        {BackgroundColor3 = Color3.fromRGB(122, 114, 255)}
                     ):Play()
                 end
             )
@@ -584,7 +584,7 @@ function lib:Window(text, preset, closebind)
                     TweenService:Create(
                         Button,
                         TweenInfo.new(.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
-                        {BackgroundColor3 = Color3.fromRGB(34, 34, 34)}
+                        {BackgroundColor3 = Color3.fromRGB(133, 115, 255)}
                     ):Play()
                 end
             )
