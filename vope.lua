@@ -678,7 +678,7 @@ function lib:Window(text, preset, closebind)
             coroutine.wrap(
                 function()
                     while wait() do
-                        FrameToggle3.BackgroundColor3 = PresetColor
+                        FrameToggle3.BackgroundColor3 = Color3.fromRGB(133, 115, 255)
                     end
                 end
             )()
