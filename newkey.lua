@@ -299,7 +299,7 @@ function lib:Window(text, preset, closebind)
         NotificationHold.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
         NotificationHold.BackgroundTransparency = 1.000
         NotificationHold.BorderSizePixel = 0
-        NotificationHold.Size = UDim2.new(0, 164, 0, 193)
+        NotificationHold.Size = UDim2.new(0, 320, 0, 250)
         NotificationHold.AutoButtonColor = false
         NotificationHold.Font = Enum.Font.SourceSans
         NotificationHold.Text = ""
@@ -319,10 +319,10 @@ function lib:Window(text, preset, closebind)
         NotificationFrame.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
         NotificationFrame.BorderSizePixel = 0
         NotificationFrame.ClipsDescendants = true
-        NotificationFrame.Position = UDim2.new(0, 82, 0, 97)
+        NotificationFrame.Position = UDim2.new(0, 160, 0, 120)
 
         NotificationFrame:TweenSize(
-            UDim2.new(0, 82, 0, 97),
+            UDim2.new(0, 164, 0, 193),
             Enum.EasingDirection.Out,
             Enum.EasingStyle.Quart,
             .6,
@@ -335,7 +335,7 @@ function lib:Window(text, preset, closebind)
 
         OkayBtn.Name = "OkayBtn"
         OkayBtn.Parent = NotificationFrame
-        OkayBtn.BackgroundColor3 = Color3.fromRGB(34, 34, 34)
+        OkayBtn.BackgroundColor3 = Color3.fromRGB(133, 115, 255)
         OkayBtn.Position = UDim2.new(0.0609756112, 0, 0.720207274, 0)
         OkayBtn.Size = UDim2.new(0, 144, 0, 42)
         OkayBtn.AutoButtonColor = false
