@@ -1664,45 +1664,13 @@ end)
             TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
             TextBox.TextSize = 14.000
 --hardbicks
-            local textboxInstance = textboxInstance.TextBox:GetPropertyChangedSignal("Text"):Connect(function()
-				TextBox.disapper = textboxInstance.textbox.Text;
-				TextBox.fireCallback(textboxInstance.TextBox.Text);
-			end)
-
-			TextBox.changeCallback = function(callback)
+            TextBox.changeCallback = function(callback)
 				TextBox.callback = callback;
 			end
 
 			TextBox.fireCallback = function(...)
 				TextBox.callback(...);
 			end
-
-			TextBox.changeText = function(text)
-				textboxInstance.TextBox.Text = text;
-			end
-
-			TextBox.getMainInstance = function()
-				return textboxInstance;
-			end
-
-			Textbox.getInstance = function()
-				return textboxInstance.frame;
-			end
-
-			TextBox.delete = function()
-				TextBox.getInstance():Destroy();
-			end
-			
-			-----------------------------------------
-			-- State related methods
-
-			TextBox.getState = function()
-				return TextBox.disapper;
-			end
-
-			TextBox.setState = function(text)
-				TextBox.changeText(text);
-end
     Tab.CanvasSize = UDim2.new(0, 0, 0, TabLayout.AbsoluteContentSize.Y)
 			return TextBox;
 end
