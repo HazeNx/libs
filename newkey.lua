@@ -241,13 +241,14 @@ function lib:Window(text, preset, closebind)
    MinimizeBtn.MouseButton1Click:Connect(function()
         if minimized == false then
          Main:TweenSize(
-                    UDim2.new(0, 0, 0, 0),
-                    Enum.EasingDirection.Out,
-                    Enum.EasingStyle.Quart,
-                    .6,
-                    true
-                )
-                wait(2)
+                                    UDim2.new(0, 0, 0, 0),
+                                    Enum.EasingDirection.Out,
+                                    Enum.EasingStyle.Quart,
+                                    .6,
+                                    true)
+                    wait(0.4)
+        TweenService:Create( Main,TweenInfo.new(.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),{BackgroundTransparency = 1}):Play()
+          wait(.3)
           Main.Visible = false
           HideGUI.Visible = true
         end
