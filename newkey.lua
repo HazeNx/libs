@@ -197,12 +197,12 @@ function lib:Window(text, preset, closebind)
    MinimizeBtn.Parent = Main
 	MinimizeBtn.BackgroundColor3 = Color3.fromRGB(255, 166, 13)
 	MinimizeBtn.BackgroundTransparency = 1
-	MinimizeBtn.Position = UDim2.new(0, 270, -0, 10)
+	MinimizeBtn.Position = UDim2.new(0, 270, -0, 8)
 	MinimizeBtn.Size = UDim2.new(0, 28, 0, 22)
 	MinimizeBtn.Font = Enum.Font.Gotham
-	MinimizeBtn.Text = "—"
-	MinimizeBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
-	MinimizeBtn.TextSize = 14.000
+	MinimizeBtn.Text = "×"
+	MinimizeBtn.TextColor3 = Color3.fromRGB(133, 115, 255)
+	MinimizeBtn.TextSize = 20.000
 	MinimizeBtn.BorderSizePixel = 0
 	MinimizeBtn.AutoButtonColor = false
    
@@ -239,20 +239,30 @@ function lib:Window(text, preset, closebind)
    MonkIcon.Image = "rbxassetid://8825654232"
    MonkIcon.ImageColor3 = Color3.fromRGB(133, 115, 255)
    
-   MinimizeBtn.MouseButton1Click:Connect(function()
-        if minimized == false then
-          Main.Visible = false
-          HideGUI.Visible = true
-        end
-   end)
-  
-   HideGUI.MouseButton1Click:Connect(function()
-       if hide420 == true then
-          Main.Visible = true
-          HideGUI.Visible = false
-        end
-   end)
+   MinimizeButton.MouseButton1Click:Connect(
+               function()
+                   Main:TweenSize(
+                       UDim2.new(0, 0, 0, 0),
+                       Enum.EasingDirection.Out,
+                       Enum.EasingStyle.Quart,
+                       .6,
+                       true
+                   )
    
+                   wait(0.4)
+   
+                   TweenService:Create(
+                       Main,
+                       TweenInfo.new(.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
+                       {BackgroundTransparency = 1}
+                   ):Play()
+   
+                   wait(.3)
+   
+                   ui:Destroy()
+               end
+           )
+  
     local uitoggled = false
     UserInputService.InputBegan:Connect(
         function(io, p)
@@ -578,7 +588,7 @@ function lib:Window(text, preset, closebind)
                     TweenService:Create(
                         Button,
                         TweenInfo.new(.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
-                        {BackgroundColor3 = Color3.fromRGB(122, 114, 255)}
+                        {BackgroundColor3 = Color3.fromRGB(155, 120, 255)}
                     ):Play()
                 end
             )
