@@ -240,7 +240,7 @@ function lib:Window(text, preset, closebind)
    MonkIcon.ImageColor3 = Color3.fromRGB(133, 115, 255)
    
 MinimizeBtn.MouseButton1Click:Connect(function()
-   Main:TweenSize(UDim2.new(0, 0, 0, 0),Enum.EasingDirection.Out,Enum.EasingStyle.Quart,
+   Main:TweenSize(UDim2.new(0, 0, 0, 0),Enum.EasingDirection.In,Enum.EasingStyle.Quart,
       .3,
       true
       )
