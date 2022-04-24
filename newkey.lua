@@ -113,15 +113,15 @@ function lib:Window(text, preset, closebind)
     local CockCorner = Instance.new("UICorner")
     local DragFrame = Instance.new("Frame")
 
-    Main.Name = "Main"
-    Main.Parent = keytlog
-    Main.AnchorPoint = Vector2.new(0.5, 0.5)
-    Main.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
-    Main.Size = UDim2.new(0, 320, 0, 250)
-    Main.BorderSizePixel = 0
-    Main.Position = UDim2.new(0.5, 0, 0.5, 0)
-    Main.ClipsDescendants = true
-    Main.Visible = true
+   Main.Name = "Main"
+   Main.Parent = keytlog
+   Main.AnchorPoint = Vector2.new(0.5, 0.5)
+   Main.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+   Main.BorderSizePixel = 0
+   Main.Position = UDim2.new(0.5, 0, 0.5, 0)
+   Main.Size = UDim2.new(0, 320, 0, 250)
+   Main.ClipsDescendants = true
+   Main.Visible = true
 
     MainCorner.CornerRadius = UDim.new(0, 5)
     MainCorner.Name = "MainCorner"
