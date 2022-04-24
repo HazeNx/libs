@@ -1614,7 +1614,7 @@ end)
             Tab.CanvasSize = UDim2.new(0, 0, 0, TabLayout.AbsoluteContentSize.Y)
         end
         --bick
-        function tabcontent:Textbox(text, holder, disapper, callback)
+        function tabcontent:Textbox(text, disapper, callback)
             local Textbox = Instance.new("Frame")
             local TextboxCorner = Instance.new("UICorner")
             local TextboxTitle = Instance.new("TextLabel")
@@ -1625,7 +1625,7 @@ end)
             Textbox.Name = "Textbox"
             Textbox.Parent = Tab
             Textbox.BackgroundColor3 = Color3.fromRGB(47, 47, 47)
-            Textbox.PlaceholderText = holder or "Typer Here..."
+            Textbox.PlaceholderText = "Type Here..."
             Textbox.ClipsDescendants = true
             Textbox.Position = UDim2.new(-0.541071415, 0, -0.532915354, 0)
             Textbox.Size = UDim2.new(0, 300, 0, 42)
