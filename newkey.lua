@@ -197,12 +197,12 @@ function lib:Window(text, preset, closebind)
    MinimizeBtn.Parent = Main
 	MinimizeBtn.BackgroundColor3 = Color3.fromRGB(255, 166, 13)
 	MinimizeBtn.BackgroundTransparency = 1
-	MinimizeBtn.Position = UDim2.new(0, 270, -0, 8)
+	MinimizeBtn.Position = UDim2.new(0, 280, -0, 8)
 	MinimizeBtn.Size = UDim2.new(0, 28, 0, 22)
 	MinimizeBtn.Font = Enum.Font.Gotham
 	MinimizeBtn.Text = "×"
 	MinimizeBtn.TextColor3 = Color3.fromRGB(133, 115, 255)
-	MinimizeBtn.TextSize = 20.000
+	MinimizeBtn.TextSize = 25.000
 	MinimizeBtn.BorderSizePixel = 0
 	MinimizeBtn.AutoButtonColor = false
    
@@ -239,7 +239,7 @@ function lib:Window(text, preset, closebind)
    MonkIcon.Image = "rbxassetid://8825654232"
    MonkIcon.ImageColor3 = Color3.fromRGB(133, 115, 255)
    
-   MinimizeButton.MouseButton1Click:Connect(
+   MinimizeBtn.MouseButton1Click:Connect(
                function()
                    Main:TweenSize(
                        UDim2.new(0, 0, 0, 0),
