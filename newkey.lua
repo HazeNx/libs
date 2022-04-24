@@ -1661,7 +1661,7 @@ end)
             TextBox.Size = UDim2.new(0, 100, 0, 23)
             TextBox.Font = Enum.Font.Gotham
             TextBox.Text = ""
-            Textbox.PlaceholderText = "Key Here..."
+            TextBox.PlaceholderText = "Key Here..."
             TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
             TextBox.TextSize = 14.000
 --hardbicks
