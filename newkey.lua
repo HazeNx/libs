@@ -246,8 +246,8 @@ function lib:Window(text, preset, closebind)
                     Enum.EasingStyle.Quart,
                     .6,
                     true
-                ):Play()
-                wait(0.4)
+                )
+                wait(2)
           Main.Visible = false
           HideGUI.Visible = true
         end
@@ -262,7 +262,7 @@ function lib:Window(text, preset, closebind)
                       .6,
                       true
                   ):Play()
-               wait(0.4)
+               wait(3)
           Main.Visible = true
           HideGUI.Visible = false
         end
