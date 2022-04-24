@@ -240,14 +240,15 @@ function lib:Window(text, preset, closebind)
    MonkIcon.ImageColor3 = Color3.fromRGB(133, 115, 255)
    
 MinimizeBtn.MouseButton1Click:Connect(function()
+  if minimized == false then
    Main:TweenSize(
       	UDim2.new(0, 0, 0, 0),
       	Enum.EasingDirection.Out,
       	Enum.EasingStyle.Quart,
       	.3,
       	true)
-wait(0.3)
 game:GetService("CoreGui"):FindFirstChild("ui"):Destroy()
+end
 end)
   
     local uitoggled = false
