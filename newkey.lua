@@ -240,6 +240,14 @@ function lib:Window(text, preset, closebind)
    
    MinimizeBtn.MouseButton1Click:Connect(function()
         if minimized == false then
+         Main:TweenSize(
+                    UDim2.new(0, 0, 0, 0),
+                    Enum.EasingDirection.Out,
+                    Enum.EasingStyle.Quart,
+                    .6,
+                    true
+                ):Play()
+                wait(0.4)
           Main.Visible = false
           HideGUI.Visible = true
         end
@@ -247,6 +255,14 @@ function lib:Window(text, preset, closebind)
   
    HideGUI.MouseButton1Click:Connect(function()
        if hide420 == true then
+          Main:TweenSize(
+                      UDim2.new(0, 320, 0, 250),
+                      Enum.EasingDirection.Out,
+                      Enum.EasingStyle.Quart,
+                      .6,
+                      true
+                  ):Play()
+               wait(0.4)
           Main.Visible = true
           HideGUI.Visible = false
         end
@@ -288,6 +304,7 @@ function lib:Window(text, preset, closebind)
         local NotificationFrame = Instance.new("Frame")
         local OkayBtn = Instance.new("TextButton")
         local OkayBtnCorner = Instance.new("UICorner")
+        local NotifCorner = Instance.new("UICorner")
         local OkayBtnTitle = Instance.new("TextLabel")
         local NotificationTitle = Instance.new("TextLabel")
         local NotificationDesc = Instance.new("TextLabel")
@@ -297,7 +314,7 @@ function lib:Window(text, preset, closebind)
         NotificationHold.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
         NotificationHold.BackgroundTransparency = 1.000
         NotificationHold.BorderSizePixel = 0
-        NotificationHold.Size = UDim2.new(0, 560, 0, 319)
+        NotificationHold.Size = UDim2.new(0, 164, 0, 193)
         NotificationHold.AutoButtonColor = false
         NotificationHold.Font = Enum.Font.SourceSans
         NotificationHold.Text = ""
@@ -317,15 +334,19 @@ function lib:Window(text, preset, closebind)
         NotificationFrame.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
         NotificationFrame.BorderSizePixel = 0
         NotificationFrame.ClipsDescendants = true
-        NotificationFrame.Position = UDim2.new(0.5, 0, 0.498432577, 0)
+        NotificationFrame.Position = UDim2.new(0, 82, 0, 97)
 
         NotificationFrame:TweenSize(
-            UDim2.new(0, 164, 0, 193),
+            UDim2.new(0, 82, 0, 97),
             Enum.EasingDirection.Out,
             Enum.EasingStyle.Quart,
             .6,
             true
         )
+
+        NotifCorner.CornerRadius = UDim.new(0, 5)
+        NotifCorner.Name = "NotifiCorner"
+        NotifCorner.Parent = NotificationFrame
 
         OkayBtn.Name = "OkayBtn"
         OkayBtn.Parent = NotificationFrame
