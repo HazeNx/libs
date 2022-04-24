@@ -147,7 +147,7 @@ function lib:Window(text, preset, closebind)
    DragCorner.Name = "DragCorner"
    DragCorner.Parent = DragFrame
 
-   Main:TweenSize(UDim2.new(0, 560, 0, 319), Enum.EasingDirection.Out, Enum.EasingStyle.Quart, .6, true)
+   Main:TweenSize(UDim2.new(0, 320, 0, 250), Enum.EasingDirection.Out, Enum.EasingStyle.Quart, .6, true)
    
    MakeDraggable(DragFrame, Main)
    
@@ -480,7 +480,7 @@ function lib:Window(text, preset, closebind)
         Tab.BackgroundTransparency = 1.000
         Tab.BorderSizePixel = 0
         Tab.Position = UDim2.new(0, 10, 0, 50)
-        Tab.Size = UDim2.new(0, 373, 0, 254)
+        Tab.Size = UDim2.new(0, 320, 0, 250)
         Tab.CanvasSize = UDim2.new(0, 0, 0, 0)
         Tab.ScrollBarThickness = 3
         Tab.Visible = false
