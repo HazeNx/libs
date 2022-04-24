@@ -117,7 +117,7 @@ function lib:Window(text, preset, closebind)
    Main.Parent = keytlog
    Main.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
    Main.BorderSizePixel = 0
-   Main.Position = UDim2.new(0, 0, 0, 0)
+   Main.Position = UDim2.new(0.5, 0, 0.5, 0)
    Main.Size = UDim2.new(0, 320, 0, 250)
    Main.Visible = true
 
@@ -147,7 +147,7 @@ function lib:Window(text, preset, closebind)
    DragCorner.Name = "DragCorner"
    DragCorner.Parent = DragFrame
 
-   Main:TweenSize(UDim2.new(0, 320, 0, 250), Enum.EasingDirection.Out, Enum.EasingStyle.Quart, .6, true)
+   Main:TweenSize(UDim2.new(0, 320, 0, 250), Enum.EasingDirection.In, Enum.EasingStyle.Quart, .6, true)
    
    MakeDraggable(DragFrame, Main)
    
