@@ -239,29 +239,18 @@ function lib:Window(text, preset, closebind)
    MonkIcon.Image = "rbxassetid://8825654232"
    MonkIcon.ImageColor3 = Color3.fromRGB(133, 115, 255)
    
-   MinimizeBtn.MouseButton1Click:Connect(
-               function()
-                   Main:TweenSize(
-                       UDim2.new(0, 0, 0, 0),
-                       Enum.EasingDirection.Out,
-                       Enum.EasingStyle.Quart,
-                       .6,
-                       true
-                   )
-   
-                   wait(0.4)
-   
-                   TweenService:Create(
-                       Main,
-                       TweenInfo.new(.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
-                       {BackgroundTransparency = 1}
-                   ):Play()
-   
-                   wait(.3)
-   
-                   ui:Destroy()
-               end
-           )
+   MinimizeBtn.MouseButton1Click:Connect(function()
+   Main:TweenSize(UDim2.new(0, 0, 0, 0),Enum.EasingDirection.Out,Enum.EasingStyle.Quart,
+      .6,
+      true
+      )
+wait(0.4)
+      TweenService:Create(
+      Main,TweenInfo.new(.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
+    {BackgroundTransparency = 1}):Play()
+wait(.3)
+ui:Destroy()
+end)
   
     local uitoggled = false
     UserInputService.InputBegan:Connect(
