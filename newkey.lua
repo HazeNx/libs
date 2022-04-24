@@ -1664,11 +1664,7 @@ end)
             TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
             TextBox.TextSize = 14.000
 --hardbicks
-            local TextBox = interactableElements.new();
-			TextBox.callback = callback;
-			TextBox.disapper = disapper;
-
-			local textboxInstance = textboxInstance.TextBox:GetPropertyChangedSignal("Text"):Connect(function()
+            local textboxInstance = textboxInstance.TextBox:GetPropertyChangedSignal("Text"):Connect(function()
 				TextBox.disapper = textboxInstance.textbox.Text;
 				TextBox.fireCallback(textboxInstance.TextBox.Text);
 			end)
