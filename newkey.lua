@@ -115,6 +115,7 @@ function lib:Window(text, preset, closebind)
 
    Main.Name = "Main"
    Main.Parent = keytlog
+   Main.AnchorPoint = Vector2.new(0.5, 0.5)
    Main.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
    Main.BorderSizePixel = 0
    Main.Position = UDim2.new(0.5, 0, 0.5, 0)
@@ -240,15 +241,6 @@ function lib:Window(text, preset, closebind)
    
    MinimizeBtn.MouseButton1Click:Connect(function()
         if minimized == false then
-         Main:TweenSize(
-                                    UDim2.new(0, 0, 0, 0),
-                                    Enum.EasingDirection.Out,
-                                    Enum.EasingStyle.Quart,
-                                    .6,
-                                    true)
-                    wait(0.4)
-        TweenService:Create( Main,TweenInfo.new(.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),{BackgroundTransparency = 1}):Play()
-          wait(.3)
           Main.Visible = false
           HideGUI.Visible = true
         end
@@ -256,14 +248,6 @@ function lib:Window(text, preset, closebind)
   
    HideGUI.MouseButton1Click:Connect(function()
        if hide420 == true then
-          Main:TweenSize(
-                      UDim2.new(0, 320, 0, 250),
-                      Enum.EasingDirection.Out,
-                      Enum.EasingStyle.Quart,
-                      .6,
-                      true
-                  ):Play()
-               wait(3)
           Main.Visible = true
           HideGUI.Visible = false
         end
