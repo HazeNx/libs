@@ -241,10 +241,10 @@ function lib:Window(text, preset, closebind)
    
 MinimizeBtn.MouseButton1Click:Connect(function()
    Main:TweenSize(UDim2.new(0, 0, 0, 0),Enum.EasingDirection.Out,Enum.EasingStyle.Quart,
-      .6,
+      .3,
       true
       )
-wait(0.4)
+wait(0.3)
 game:GetService("CoreGui"):FindFirstChild("ui"):Destroy()
 end)
   
