@@ -1625,7 +1625,6 @@ end)
             Textbox.Name = "Textbox"
             Textbox.Parent = Tab
             Textbox.BackgroundColor3 = Color3.fromRGB(47, 47, 47)
-            Textbox.PlaceholderText = "Type Here..."
             Textbox.ClipsDescendants = true
             Textbox.Position = UDim2.new(-0.541071415, 0, -0.532915354, 0)
             Textbox.Size = UDim2.new(0, 300, 0, 42)
@@ -1662,6 +1661,7 @@ end)
             TextBox.Size = UDim2.new(0, 100, 0, 23)
             TextBox.Font = Enum.Font.Gotham
             TextBox.Text = ""
+            Textbox.PlaceholderText = "Key Here..."
             TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
             TextBox.TextSize = 14.000
 --hardbicks
