@@ -1582,7 +1582,8 @@ function lib:Window(text, preset, closebind)
             local Label = Instance.new("TextButton")
             local LabelCorner = Instance.new("UICorner")
             local LabelTitle = Instance.new("TextLabel")
-
+            local labell = {}
+            
             Label.Name = "Button"
             Label.Parent = Tab
             Label.BackgroundColor3 = Color3.fromRGB(133, 115, 255)
