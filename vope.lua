@@ -331,7 +331,7 @@ function lib:Window(text, preset, closebind)
 
         OkayBtn.Name = "OkayBtn"
         OkayBtn.Parent = NotificationFrame
-        OkayBtn.BackgroundColor3 = Color3.fromRGB(34, 34, 34)
+        OkayBtn.BackgroundColor3 = Color3.fromRGB(133, 115, 255)
         OkayBtn.Position = UDim2.new(0.0609756112, 0, 0.720207274, 0)
         OkayBtn.Size = UDim2.new(0, 144, 0, 42)
         OkayBtn.AutoButtonColor = false
@@ -456,7 +456,7 @@ function lib:Window(text, preset, closebind)
 
         TabBtnIndicator.Name = "TabBtnIndicator"
         TabBtnIndicator.Parent = TabBtn
-        TabBtnIndicator.BackgroundColor3 = PresetColor
+        TabBtnIndicator.BackgroundColor3 = Color3.fromRGB(133, 115, 255)
         TabBtnIndicator.BorderSizePixel = 0
         TabBtnIndicator.Position = UDim2.new(0, 0, 1, 0)
         TabBtnIndicator.Size = UDim2.new(0, 0, 0, 2)
@@ -1610,6 +1610,12 @@ function lib:Window(text, preset, closebind)
             LabelTitle.TextXAlignment = Enum.TextXAlignment.Left
 
             Tab.CanvasSize = UDim2.new(0, 0, 0, TabLayout.AbsoluteContentSize.Y)
+            
+        function labell:Set(newtext)
+             LabelTitle.Text = newtext
+        end
+            
+            return labell
         end
         function tabcontent:Textbox(text, disapper, callback)
             local Textbox = Instance.new("Frame")
@@ -1660,7 +1666,7 @@ function lib:Window(text, preset, closebind)
             TextBox.Text = ""
             TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
             TextBox.TextSize = 14.000
-
+--dickhard
             TextBox.FocusLost:Connect(
                 function(ep)
                     if ep then
