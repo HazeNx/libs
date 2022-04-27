@@ -164,7 +164,6 @@ function lib:Window(text, preset, closebind)
    
    MakeDraggable(DragFrame, Main)
    
-local ignu = {}
    Ign.Name = "IGN"
    Ign.Parent = DragFrame
    Ign.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -176,10 +175,6 @@ local ignu = {}
    Ign.TextColor3 = Color3.fromRGB(133, 115, 255)
    Ign.TextSize = 12.000
    Ign.TextXAlignment = Enum.TextXAlignment.Left
-
-function ignu:Change(textnew)
-             IGN.Text = game.Players.LocalPlayer.Name.."#"..textnew
-end
      
    UserHead.Name = "AvatarHead"
    UserHead.Parent = DragFrame
