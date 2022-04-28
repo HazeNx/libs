@@ -251,7 +251,8 @@ function lib:Window(text, preset, closebind)
           true)
           minimized = true
           wait(.5)
-          knixhub .Enabled = false
+          knixhub 
+.Enabled = false
           Main.Visible = false
           HideGUI.Visible = true
                
