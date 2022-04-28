@@ -102,6 +102,7 @@ function lib:Window(text, preset, closebind)
     local MonkIcon = Instance.new("ImageLabel")
     local HideGUI = Instance.new("TextButton")
     local Title = Instance.new("TextLabel")
+    local Whitelist = Instance.new("TetxLabel")
     local Ign = Instance.new("TextLabel")
     local UserCircleImage = Instance.new("ImageLabel")
     local UserHead = Instance.new("ImageLabel")
@@ -110,7 +111,9 @@ function lib:Window(text, preset, closebind)
     local MainCorner = Instance.new("UICorner")
     local TuglosCorner = Instance.new("UICorner")
     local CockCorner = Instance.new("UICorner")
+    local UserCorner = Instance.new("UICorner")
     local DragFrame = Instance.new("Frame")
+    local UserFrame = Instance.new("Frame")
 
     Main.Name = "Main"
     Main.Parent = ui
@@ -166,23 +169,46 @@ function lib:Window(text, preset, closebind)
    
    MakeDraggable(DragFrame, Main)
    
-   Ign.Name = "IGN"
-   Ign.Parent = DragFrame
-   Ign.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-   Ign.BackgroundTransparency = 1.000
-   Ign.Position = UDim2.new(0, 51, 0, 16)
-   Ign.Size = UDim2.new(0, 200, 0, 25)
-   Ign.Font = Enum.Font.GothamSemibold
-   Ign.Text = game.Players.LocalPlayer.Name.."#"..tostring(math.random(1000,9999))
-   Ign.TextColor3 = Color3.fromRGB(133, 115, 255)
-   Ign.TextSize = 12.000
-   Ign.TextXAlignment = Enum.TextXAlignment.Left
-     
-   UserHead.Name = "AvatarHead"
-   UserHead.Parent = DragFrame
-   UserHead.BackgroundColor3 = Color3.fromRGB(51, 51, 51)
+   UserFrame.Name = "UserFrame"
+   UserFrame.Parent = Main
+   UserFrame.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+   UserFrame.BackgroundTransparency = 0.000
+   UserFrame.Size = UDim2.new(0, 105, 0, 41)
+   UserFrame.Postion = UDim2.new(0, 10, 0, 270)
+   
+    UserCorner.CornerRadius = UDim.new(0, 5)
+    UserCorner.Name = "UserCorner"
+    UserCorner.Parent = UserFrame
+   
+    Ign.Name = "IGN"
+    Ign.Parent = UserFrame
+    Ign.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    Ign.BackgroundTransparency = 1.000
+    Ign.Position = UDim2.new(0, 41, 0, 2)
+    Ign.Size = UDim2.new(0, 200, 0, 25)
+    Ign.Font = Enum.Font.GothamSemibold
+    Ign.Text = game.Players.LocalPlayer.Name.."#"..tostring(math.random(1000,9999))
+    Ign.TextColor3 = Color3.fromRGB(255, 255, 255)
+    Ign.TextSize = 14.000
+    Ign.TextXAlignment = Enum.TextXAlignment.Left
+    
+    Whitelist.Name = "IGN"
+    Whitelist.Parent = UserFrame
+    Whitelist.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    Whitelist.BackgroundTransparency = 1.000
+    Whitelist.Position = UDim2.new(0, 41, 0, 15)
+    Whitelist.Size = UDim2.new(0, 200, 0, 25)
+    Whitelist.Font = Enum.Font.GothamBold
+    Whitelist.Text = "Whitelisted"
+    Whitelist.TextColor3 = Color3.fromRGB(133, 115, 255)
+    Whitelist.TextSize = 10.000
+    Whitelist.TextXAlignment = Enum.TextXAlignment.Left
+    
+    UserHead.Name = "AvatarHead"
+    UserHead.Parent = UserFrame
+    UserHead.BackgroundColor3 = Color3.fromRGB(51, 51, 51)
    UserHead.BackgroundTransparency = 1.000
-   UserHead.Position = UDim2.new(0, 13, 0, 4)
+   UserHead.Position = UDim2.new(0, 5, 0, 4)
    UserHead.Size = UDim2.new(0, 32, 0, 32)
    UserHead.Image = "https://www.roblox.com/headshot-thumbnail/image?userId="..game.Players.LocalPlayer.UserId.."&width=420&height=420&format=png"
    UserHead.ImageColor3 = Color3.fromRGB(220, 221, 222)
@@ -193,7 +219,7 @@ function lib:Window(text, preset, closebind)
    UserCircleImage.BackgroundTransparency = 1.000
    UserCircleImage.Size = UDim2.new(0, 32, 0, 32)
    UserCircleImage.Image = "rbxassetid://4031889928"
-   UserCircleImage.ImageColor3 = Color3.fromRGB(25, 25, 25)
+   UserCircleImage.ImageColor3 = Color3.fromRGB(40, 40, 40)
     
    MinimizeBtn.Name = "MinimizeButton"
    MinimizeBtn.Parent = Main
@@ -250,7 +276,7 @@ function lib:Window(text, preset, closebind)
           .6, 
           true)
           minimized = true
-          wait(.5)
+          wait(.2)
           HideGUI.Visible = true
         end
    end)
@@ -265,7 +291,7 @@ function lib:Window(text, preset, closebind)
           true
           )
           minimized = false
-          wait(.5)
+          wait(.2)
           HideGUI.Visible = false
         end
    end)
