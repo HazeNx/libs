@@ -134,7 +134,7 @@ function lib:Window(text, preset, closebind)
     TabHold.Position = UDim2.new(0.0339285731, 0, 0.147335425, 0)
     TabHold.Size = UDim2.new(0, 107, 0, 224)
     TabHold.CanvasSize = UDim2.new(0, 0, 0, 0)
-    TabHold.ScrollingDirection = 4
+    TabHold.ScrollingDirection = Y
     TabHold.ScrollBarThickness = 3
 
     TabHoldLayout.Name = "TabHoldLayout"
