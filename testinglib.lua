@@ -242,14 +242,33 @@ function lib:Window(text, preset, closebind)
    MonkIcon.ImageColor3 = Color3.fromRGB(220, 221, 222)
    
    MinimizeBtn.MouseButton1Click:Connect(function()
-        if minimized == false then
+       if minimized == false then
+          Main:TweenSize(
+          UDim2.new(0, 0, 0, 0), 
+          Enum.EasingDirection.Out, 
+          Enum.EasingStyle.Quart, 
+          .6, 
+          true)
+          minimized = true
+          wait(.5)
+          knox.Enabled = false
           Main.Visible = false
           HideGUI.Visible = true
+               
         end
    end)
   
    HideGUI.MouseButton1Click:Connect(function()
-       if hide420 == true then
+       if minimized == true then
+          Main:TweenSize(
+          UDim2.new(0, 560, 0, 319),
+          Enum.EasingDirection.Out,
+          Enum.EasingStyle.Quart,
+          .6,
+          true
+          )
+          knox.Enabled = true
+          minimized = false
           Main.Visible = true
           HideGUI.Visible = false
         end
