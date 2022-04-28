@@ -251,9 +251,7 @@ function lib:Window(text, preset, closebind)
           true)
           minimized = true
           wait(.5)
-          Main.Visible = false
           HideGUI.Visible = true
-               
         end
    end)
   
@@ -267,7 +265,7 @@ function lib:Window(text, preset, closebind)
           true
           )
           minimized = false
-          Main.Visible = true
+          wait(.5)
           HideGUI.Visible = false
         end
    end)
