@@ -102,7 +102,7 @@ function lib:Window(text, preset, closebind)
     local MonkIcon = Instance.new("ImageLabel")
     local HideGUI = Instance.new("TextButton")
     local Title = Instance.new("TextLabel")
-    local Whitelist = Instance.new("TextLabel")
+    local Whitelist = Instance.new("TetxLabel")
     local Ign = Instance.new("TextLabel")
     local UserCircleImage = Instance.new("ImageLabel")
     local UserHead = Instance.new("ImageLabel")
@@ -174,7 +174,7 @@ function lib:Window(text, preset, closebind)
    UserFrame.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
    UserFrame.BackgroundTransparency = 0.000
    UserFrame.Size = UDim2.new(0, 105, 0, 41)
-   UserFrame.Postion = UDim2.new(0, 10, 0, 270)
+   UserFrame.Position = UDim2.new(0, 10, 0, 270)
    
     UserCorner.CornerRadius = UDim.new(0, 5)
     UserCorner.Name = "UserCorner"
@@ -192,7 +192,7 @@ function lib:Window(text, preset, closebind)
     Ign.TextSize = 14.000
     Ign.TextXAlignment = Enum.TextXAlignment.Left
     
-    Whitelist.Name = "Whitelist"
+    Whitelist.Name = "IGN"
     Whitelist.Parent = UserFrame
     Whitelist.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
     Whitelist.BackgroundTransparency = 1.000
