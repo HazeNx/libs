@@ -102,7 +102,7 @@ function lib:Window(text, preset, closebind)
     local MonkIcon = Instance.new("ImageLabel")
     local HideGUI = Instance.new("TextButton")
     local Title = Instance.new("TextLabel")
-    local Whitelist = Instance.new("TetxLabel")
+    local Whitelist = Instance.new("TextLabel")
     local Ign = Instance.new("TextLabel")
     local UserCircleImage = Instance.new("ImageLabel")
     local UserHead = Instance.new("ImageLabel")
@@ -192,7 +192,7 @@ function lib:Window(text, preset, closebind)
     Ign.TextSize = 14.000
     Ign.TextXAlignment = Enum.TextXAlignment.Left
     
-    Whitelist.Name = "IGN"
+    Whitelist.Name = "Whitelist"
     Whitelist.Parent = UserFrame
     Whitelist.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
     Whitelist.BackgroundTransparency = 1.000
