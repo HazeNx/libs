@@ -132,7 +132,9 @@ function lib:Window(text, preset, closebind)
     TabHold.BackgroundTransparency = 1.000
     TabHold.BorderSizePixel = 0
     TabHold.Position = UDim2.new(0.0339285731, 0, 0.147335425, 0)
-    TabHold.Size = UDim2.new(0, 107, 0, 254)
+    TabHold.Size = UDim2.new(0, 107, 0, 224)
+    TabHold.CanvasSize = UDim2.new(0, 0, 0, 0)
+    TabHold.ScrollingDirection = 4
     TabHold.ScrollBarThickness = 3
 
     TabHoldLayout.Name = "TabHoldLayout"
