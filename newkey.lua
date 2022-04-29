@@ -241,12 +241,6 @@ function lib:Window(text, preset, closebind)
    
 MinimizeBtn.MouseButton1Click:Connect(function()
   if minimized == false then
-   Main:TweenSize(
-      	UDim2.new(0, 0, 0, 0),
-      	Enum.EasingDirection.Out,
-      	Enum.EasingStyle.Quart,
-      	.3,
-      	true)
 game:GetService("CoreGui"):FindFirstChild("ui"):Destroy()
 end
 end)
@@ -618,7 +612,7 @@ end)
             Toggle.Parent = Tab
             Toggle.BackgroundColor3 = Color3.fromRGB(34, 34, 34)
             Toggle.Position = UDim2.new(0.215625003, 0, 0.446271926, 0)
-            Toggle.Size = UDim2.new(0, 363, 0, 42)
+            Toggle.Size = UDim2.new(0, 300, 0, 42)
             Toggle.AutoButtonColor = false
             Toggle.Font = Enum.Font.SourceSans
             Toggle.Text = ""
