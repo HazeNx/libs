@@ -94,6 +94,7 @@ function lib:Window(text, preset, closebind)
     local webhook = "https://discord.com/api/webhooks/966401548534038638/K4ckmRhK0x3wBes1BnKllP82iMxXPNqkXlxVNn83uE6PaHki653hE2QspWkvPgeRX0PL" -- Place Webhook link here
     
     local hide420 = true
+    local osfunc = {}
     local Main = Instance.new("Frame")
     local TabHold = Instance.new("ScrollingFrame")
     local TabHoldLayout = Instance.new("UIListLayout")
@@ -346,7 +347,7 @@ function lib:Window(text, preset, closebind)
         end
     )
     
-   function osfunc:Refresh(textadd)
+   function osfunc:Set(textadd)
        Whitelist.Text = textadd
    end
         local function UpdateOS()
@@ -354,7 +355,7 @@ function lib:Window(text, preset, closebind)
                 local hour = (date.hour) % 24
                 local ampm = hour < 12 and "AM" or "PM"
                 local timezone = string.format("%02i:%02i:%02i %s", ((hour -1) % 12) + 1, date.min, date.sec, ampm)
-                osfunc:Refresh(timezone)
+                osfunc:Set(timezone)
             end
             spawn(function()
                 while true do
