@@ -107,6 +107,8 @@ function lib:Window(text, preset, closebind)
     local Ign = Instance.new("TextLabel")
     local UserCircleImage = Instance.new("ImageLabel")
     local UserHead = Instance.new("ImageLabel")
+    local Pord = Instance.new("TextLabel")
+      local PordCorner = Instance.new("UICorner")
     local TabFolder = Instance.new("Folder")
     local DragCorner = Instance.new("UICorner")
     local MainCorner = Instance.new("UICorner")
@@ -177,10 +179,6 @@ function lib:Window(text, preset, closebind)
    
    MakeDraggable(DragFrame, Main)
    
-local pordi = {}
-function tabcontent:Whitelist(text)
-  local Pord = Instance.new("TextLabel")
-  local PordCorner = Instance.new("UICorner")
    Pord.Name = "Prodibol"
    Pord.Parent = Main
    Pord.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
@@ -196,12 +194,6 @@ function tabcontent:Whitelist(text)
    PordCorner.CornerRadius = UDim.new(0, 5)
    PordCorner.Name = "PordCorner"
    PordCorner.Parent = Pord
-
-function pordi:Set(newtext)
-             Pord.Text = newtext
-end
-     return pordi
-end
   
    MinimizeBtn.Name = "MinimizeButton"
    MinimizeBtn.Parent = Main
