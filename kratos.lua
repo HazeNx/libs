@@ -9,7 +9,7 @@ local PresetColor = Color3.fromRGB(44, 120, 224)
 local CloseBind = Enum.KeyCode.RightControl
 
 local keytlog = Instance.new("ScreenGui")
-keytlog.Name = "ui"
+keytlog.Name = "key"
 keytlog.Parent = game.CoreGui
 keytlog.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
@@ -329,7 +329,7 @@ end)
 
         OkayBtn.Name = "OkayBtn"
         OkayBtn.Parent = NotificationFrame
-        OkayBtn.BackgroundColor3 = Color3.fromRGB(133, 115, 255)
+        OkayBtn.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
         OkayBtn.Position = UDim2.new(0.0609756112, 0, 0.720207274, 0)
         OkayBtn.Size = UDim2.new(0, 144, 0, 42)
         OkayBtn.AutoButtonColor = false
