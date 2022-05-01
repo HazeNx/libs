@@ -190,7 +190,7 @@ local pordi = {}
    Pord.Text = ("Not Whitelisted")
    Pord.TextColor3 = Color3.fromRGB(190, 190, 190)
    Pord.TextSize = 10.000
-   Pord.TextXAlignment = Enum.TextXAlignment.Left
+   Pord.TextXAlignment = Enum.TextXAlignment.Center
 
    PordCorner.CornerRadius = UDim.new(0, 5)
    PordCorner.Name = "PordCorner"
