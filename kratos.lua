@@ -179,7 +179,6 @@ function lib:Window(text, preset, closebind)
    
    MakeDraggable(DragFrame, Main)
    
-local pordi = Pord
    Pord.Name = "Prodibol"
    Pord.Parent = Main
    Pord.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
@@ -191,9 +190,7 @@ local pordi = Pord
    Pord.TextColor3 = Color3.fromRGB(190, 190, 190)
    Pord.TextSize = 10.000
    Pord.TextXAlignment = Enum.TextXAlignment.Center
-function pordi:Set(newtext)
-         Pord.Text = newtext
-    end
+ 
    PordCorner.CornerRadius = UDim.new(0, 5)
    PordCorner.Name = "PordCorner"
    PordCorner.Parent = Pord
