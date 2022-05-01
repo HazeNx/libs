@@ -225,7 +225,7 @@ function lib:Window(text, preset, closebind)
     Whitelist.Position = UDim2.new(0, 41, 0, 15)
     Whitelist.Size = UDim2.new(0, 200, 0, 25)
     Whitelist.Font = Enum.Font.GothamBold
-    Whitelist.Text = "Whitelisted"
+    Whitelist.Text = "0:00PM"
     Whitelist.TextColor3 = Color3.fromRGB(133, 115, 255)
     Whitelist.TextSize = 10.000
     Whitelist.TextXAlignment = Enum.TextXAlignment.Left
@@ -322,6 +322,24 @@ function lib:Window(text, preset, closebind)
         end
    end)
    
+   
+   function osfunc:Refresh(textadd)
+        Whitelist.Text = textadd
+   end
+ local function UpdateOS()
+         local date = os.date("*t")
+         local hour = (date.hour) % 24
+         local ampm = hour < 12 and "AM" or "PM"
+         local timezone = string.format("%02i:%02i:%02i %s", ((hour -1) % 12) + 1, date.min, date.sec, ampm)
+         local datetime = string.format("%02d/%02d/%04d", date.day, date.month, date.year)
+         osfunc:Refresh("Time : " .. timezone)
+     end
+     spawn(function()
+         while true do
+             UpdateOS()
+             game:GetService("RunService").RenderStepped:Wait()
+         end
+     end)
     local uitoggled = false
     UserInputService.InputBegan:Connect(
         function(io, p)
