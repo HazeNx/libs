@@ -102,7 +102,6 @@ function lib:Window(text, preset, closebind)
     local MonkIcon = Instance.new("ImageLabel")
     local HideGUI = Instance.new("TextButton")
     local Title = Instance.new("TextLabel")
-    local Pord = Instance.new("TextLabel")
     local Pong = Instance.new("TextLabel")
     local Ping = Instance.new("TextLabel")
     local Ign = Instance.new("TextLabel")
@@ -180,9 +179,10 @@ function lib:Window(text, preset, closebind)
    MakeDraggable(DragFrame, Main)
    
 local pordi = {}
+function tabcontent:Whitelist(text)
    Pord.Name = "Prodibol"
    Pord.Parent = Main
-   Pord.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+   Pord.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
    Pord.BackgroundTransparency = 0.000
    Pord.Position = UDim2.new(0, 13, 0, 215)
    Pord.Size = UDim2.new(0, 110, 0, 25)
@@ -198,7 +198,10 @@ local pordi = {}
 
 function pordi:Set(newtext)
              Pord.Text = newtext
-        end
+end
+     return pordi
+end
+  
    MinimizeBtn.Name = "MinimizeButton"
    MinimizeBtn.Parent = Main
 	MinimizeBtn.BackgroundColor3 = Color3.fromRGB(255, 166, 13)
