@@ -576,7 +576,7 @@ end)
                     TweenService:Create(
                         Button,
                         TweenInfo.new(.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
-                        {BackgroundColor3 = Color3.fromRGB(155, 120, 255)}
+                        {BackgroundColor3 = Color3.fromRGB(45, 45, 45)}
                     ):Play()
                 end
             )
@@ -586,7 +586,7 @@ end)
                     TweenService:Create(
                         Button,
                         TweenInfo.new(.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
-                        {BackgroundColor3 = Color3.fromRGB(133, 115, 255)}
+                        {BackgroundColor3 = Color3.fromRGB(40, 40, 40)}
                     ):Play()
                 end
             )
@@ -1647,7 +1647,7 @@ end)
 
             TextboxFrame.Name = "TextboxFrame"
             TextboxFrame.Parent = TextboxTitle
-            TextboxFrame.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+            TextboxFrame.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
             TextboxFrame.Position = UDim2.new(1, -5, 0, 10)
             TextboxFrame.Size = UDim2.new(0, 100, 0, 23)
 
