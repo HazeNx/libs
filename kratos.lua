@@ -109,9 +109,6 @@ function lib:Window(text, preset, closebind)
     local UserHead = Instance.new("ImageLabel")
     local Pord = Instance.new("TextLabel")
     local PordCorner = Instance.new("UICorner")
-    function Pord:Set(newtext)
-         Pord.Text = newtext
-    end
     local TabFolder = Instance.new("Folder")
     local DragCorner = Instance.new("UICorner")
     local MainCorner = Instance.new("UICorner")
@@ -182,6 +179,7 @@ function lib:Window(text, preset, closebind)
    
    MakeDraggable(DragFrame, Main)
    
+local pordi = {gay}
    Pord.Name = "Prodibol"
    Pord.Parent = Main
    Pord.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
@@ -193,7 +191,9 @@ function lib:Window(text, preset, closebind)
    Pord.TextColor3 = Color3.fromRGB(190, 190, 190)
    Pord.TextSize = 10.000
    Pord.TextXAlignment = Enum.TextXAlignment.Center
-
+function pordi:Set(newtext)
+         Pord.Text = newtext
+    end
    PordCorner.CornerRadius = UDim.new(0, 5)
    PordCorner.Name = "PordCorner"
    PordCorner.Parent = Pord
