@@ -243,7 +243,7 @@ function lib:Window(text, preset, closebind)
    
 MinimizeBtn.MouseButton1Click:Connect(function()
   if minimized == false then
-game:GetService("CoreGui"):FindFirstChild("ui"):Destroy()
+game:GetService("CoreGui"):FindFirstChild("key"):Destroy()
 end
 end)
   
