@@ -199,7 +199,7 @@ function lib:Window(text, preset, closebind)
    UserFrame.Parent = Main
    UserFrame.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
    UserFrame.BackgroundTransparency = 0.000
-   UserFrame.Size = UDim2.new(0, 105, 0, 41)
+   UserFrame.Size = UDim2.new(0, 150, 0, 41)
    UserFrame.Position = UDim2.new(0, 10, 0, 270)
    
     UserCorner.CornerRadius = UDim.new(0, 5)
@@ -213,7 +213,7 @@ function lib:Window(text, preset, closebind)
     Ign.Position = UDim2.new(0, 41, 0, 2)
     Ign.Size = UDim2.new(0, 200, 0, 25)
     Ign.Font = Enum.Font.GothamSemibold
-    Ign.Text = game.Players.LocalPlayer.Name.."#"..tostring(math.random(1000,9999))
+    Ign.Text = game.Players.LocalPlayer.Name
     Ign.TextColor3 = Color3.fromRGB(255, 255, 255)
     Ign.TextSize = 14.000
     Ign.TextXAlignment = Enum.TextXAlignment.Left
@@ -225,7 +225,7 @@ function lib:Window(text, preset, closebind)
     Whitelist.Position = UDim2.new(0, 41, 0, 15)
     Whitelist.Size = UDim2.new(0, 200, 0, 25)
     Whitelist.Font = Enum.Font.GothamBold
-    Whitelist.Text = "0:00PM"
+    Whitelist.Text = ""
     Whitelist.TextColor3 = Color3.fromRGB(133, 115, 255)
     Whitelist.TextSize = 10.000
     Whitelist.TextXAlignment = Enum.TextXAlignment.Left
@@ -251,12 +251,12 @@ function lib:Window(text, preset, closebind)
 	   MinimizeBtn.Parent = Main
 		MinimizeBtn.BackgroundColor3 = Color3.fromRGB(255, 166, 13)
 		MinimizeBtn.BackgroundTransparency = 1
-		MinimizeBtn.Position = UDim2.new(0, 285, -0, 3)
+		MinimizeBtn.Position = UDim2.new(0, 525, -0, 3)
 		MinimizeBtn.Size = UDim2.new(0, 28, 0, 22)
 		MinimizeBtn.Font = Enum.Font.Gotham
 		MinimizeBtn.Text = "—"
 		MinimizeBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
-		MinimizeBtn.TextSize = 25.000
+		MinimizeBtn.TextSize = 20.000
 		MinimizeBtn.BorderSizePixel = 0
 		MinimizeBtn.AutoButtonColor = false
    
@@ -331,8 +331,7 @@ function lib:Window(text, preset, closebind)
          local hour = (date.hour) % 24
          local ampm = hour < 12 and "AM" or "PM"
          local timezone = string.format("%02i:%02i:%02i %s", ((hour -1) % 12) + 1, date.min, date.sec, ampm)
-         local datetime = string.format("%02d/%02d/%04d", date.day, date.month, date.year)
-         osfunc:Refresh("Time : " .. timezone)
+         osfunc:Refresh(timezone)
      end
      spawn(function()
          while true do
@@ -340,6 +339,7 @@ function lib:Window(text, preset, closebind)
              game:GetService("RunService").RenderStepped:Wait()
          end
      end)
+     
     local uitoggled = false
     UserInputService.InputBegan:Connect(
         function(io, p)
