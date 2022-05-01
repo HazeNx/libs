@@ -107,12 +107,11 @@ function lib:Window(text, preset, closebind)
     local Ign = Instance.new("TextLabel")
     local UserCircleImage = Instance.new("ImageLabel")
     local UserHead = Instance.new("ImageLabel")
-    local pordi = {}
     local Pord = Instance.new("TextLabel")
-      local PordCorner = Instance.new("UICorner")
-     function pordi:Set(newtext)
-                   Pord.Text = newtext
-              end
+    local PordCorner = Instance.new("UICorner")
+    function Pord:Set(newtext)
+         Pord.Text = newtext
+    end
     local TabFolder = Instance.new("Folder")
     local DragCorner = Instance.new("UICorner")
     local MainCorner = Instance.new("UICorner")
