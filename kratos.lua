@@ -110,7 +110,6 @@ function lib:Window(text, preset, closebind)
     local TabFolder = Instance.new("Folder")
     local DragCorner = Instance.new("UICorner")
     local MainCorner = Instance.new("UICorner")
-    local PordCorner = Instance.new("UICorner")
     local TuglosCorner = Instance.new("UICorner")
     local CockCorner = Instance.new("UICorner")
     local DragFrame = Instance.new("Frame")
@@ -180,6 +179,8 @@ function lib:Window(text, preset, closebind)
    
 local pordi = {}
 function tabcontent:Whitelist(text)
+  local Pord = Instance.new("TextLabel")
+  local PordCorner = Instance.new("UICorner")
    Pord.Name = "Prodibol"
    Pord.Parent = Main
    Pord.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
