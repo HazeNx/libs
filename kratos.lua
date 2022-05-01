@@ -1620,7 +1620,7 @@ end)
 
             Textbox.Name = "Textbox"
             Textbox.Parent = Tab
-            Textbox.BackgroundColor3 = Color3.fromRGB(47, 47, 47)
+            Textbox.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
             Textbox.ClipsDescendants = true
             Textbox.Position = UDim2.new(-0.541071415, 0, -0.532915354, 0)
             Textbox.Size = UDim2.new(0, 300, 0, 42)
@@ -1643,7 +1643,7 @@ end)
 
             TextboxFrame.Name = "TextboxFrame"
             TextboxFrame.Parent = TextboxTitle
-            TextboxFrame.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+            TextboxFrame.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
             TextboxFrame.Position = UDim2.new(1, -5, 0, 10)
             TextboxFrame.Size = UDim2.new(0, 100, 0, 23)
 
