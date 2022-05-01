@@ -293,23 +293,6 @@ function lib:Window(text, preset, closebind)
    MonkIcon.Image = "rbxassetid://8825654232"
    MonkIcon.ImageColor3 = Color3.fromRGB(220, 221, 222)
    
-   function osfunc:Refresh(textadd)
-           Whitelist.Text = textadd
-      end
-    local function UpdateOS()
-            local date = os.date("*t")
-            local hour = (date.hour) % 24
-            local ampm = hour < 12 and "AM" or "PM"
-            local timezone = string.format("%02i:%02i:%02i %s", ((hour -1) % 12) + 1, date.min, date.sec, ampm)
-            osfunc:Refresh(timezone)
-        end
-        spawn(function()
-            while true do
-                UpdateOS()
-                game:GetService("RunService").RenderStepped:Wait()
-            end
-        end)
-   
    MinimizeBtn.MouseButton1Click:Connect(function()
        if minimized == false then
           Main:TweenSize(
@@ -362,6 +345,23 @@ function lib:Window(text, preset, closebind)
             end
         end
     )
+    
+   function osfunc:Refresh(textadd)
+       Whitelist.Text = textadd
+   end
+        local function UpdateOS()
+                local date = os.date("*t")
+                local hour = (date.hour) % 24
+                local ampm = hour < 12 and "AM" or "PM"
+                local timezone = string.format("%02i:%02i:%02i %s", ((hour -1) % 12) + 1, date.min, date.sec, ampm)
+                osfunc:Refresh(timezone)
+            end
+            spawn(function()
+                while true do
+                    UpdateOS()
+                    game:GetService("RunService").RenderStepped:Wait()
+                end
+            end)
 
     TabFolder.Name = "TabFolder"
     TabFolder.Parent = Main
