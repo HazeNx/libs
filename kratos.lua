@@ -179,7 +179,7 @@ function lib:Window(text, preset, closebind)
    
    MakeDraggable(DragFrame, Main)
    
-local pordi = {gay}
+local pordi = Pord
    Pord.Name = "Prodibol"
    Pord.Parent = Main
    Pord.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
@@ -187,7 +187,7 @@ local pordi = {gay}
    Pord.Position = UDim2.new(0, 13, 0, 215)
    Pord.Size = UDim2.new(0, 110, 0, 25)
    Pord.Font = Enum.Font.Code
-   Pord.Text = ("Not Whitelisted")
+   Pord.Text = "Not Whitelisted"
    Pord.TextColor3 = Color3.fromRGB(190, 190, 190)
    Pord.TextSize = 10.000
    Pord.TextXAlignment = Enum.TextXAlignment.Center
