@@ -219,14 +219,14 @@ function lib:Window(text, preset, closebind)
     Ign.TextSize = 14.000
     Ign.TextXAlignment = Enum.TextXAlignment.Left
     
-    Whitelist.Name = "Time"
+    Whitelist.Name = "Executor"
     Whitelist.Parent = UserFrame
     Whitelist.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
     Whitelist.BackgroundTransparency = 1.000
     Whitelist.Position = UDim2.new(0, 41, 0, 15)
     Whitelist.Size = UDim2.new(0, 200, 0, 25)
     Whitelist.Font = Enum.Font.GothamBold
-    Whitelist.Text = ""
+    Whitelist.Text =  (identifyexecutor and table.concat({ identifyexecutor() }, " ") or "Unknown")
     Whitelist.TextColor3 = Color3.fromRGB(133, 115, 255)
     Whitelist.TextSize = 10.000
     Whitelist.TextXAlignment = Enum.TextXAlignment.Left
@@ -346,23 +346,6 @@ function lib:Window(text, preset, closebind)
             end
         end
     )
-    
-   function osfunc:Set(textadd)
-       Whitelist.Text = textadd
-   end
-        local function UpdateOS()
-                local date = os.date("*t")
-                local hour = (date.hour) % 24
-                local ampm = hour < 12 and "AM" or "PM"
-                local timezone = string.format("%02i:%02i:%02i %s", ((hour -1) % 12) + 1, date.min, date.sec, ampm)
-                osfunc:Set(timezone)
-            end
-            spawn(function()
-                while true do
-                    UpdateOS()
-                    game:GetService("RunService").RenderStepped:Wait()
-                end
-            end)
 
     TabFolder.Name = "TabFolder"
     TabFolder.Parent = Main
