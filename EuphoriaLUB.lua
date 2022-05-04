@@ -1734,7 +1734,7 @@ function lib:Window(text, preset, closebind)
             SepTitle.Parent = SepBtn
             SepTitle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
             SepTitle.BackgroundTransparency = 1.000
-            SepTitle.Position = UDim2.new(0, 60, 0, 2)
+            SepTitle.Position = UDim2.new(0, 90, 0, 2)
             SepTitle.Size = UDim2.new(0, 187, 0, 5)
             SepTitle.Font = Enum.Font.Code
             SepTitle.Text = text
@@ -1758,7 +1758,7 @@ function lib:Window(text, preset, closebind)
             SepRight.Parent = SepBtn
             SepRight.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
             SepRight.BackgroundTransparency = 1.000
-            SepRight.Position = UDim2.new(0, 100, 0, 2)
+            SepRight.Position = UDim2.new(0, 165, 0, 2)
             SepRight.Size = UDim2.new(0, 187, 0, 5)
             SepRight.Font = Enum.Font.Code
             SepRight.Text = "———————"
