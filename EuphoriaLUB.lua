@@ -1816,6 +1816,7 @@ local drop = {}
             TextBox.BackgroundTransparency = 1.000
             TextBox.Size = UDim2.new(0, 100, 0, 23)
             TextBox.Font = Enum.Font.Gotham
+            TextBox.PlaceholderText = "Type Here..."
             TextBox.Text = ""
             TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
             TextBox.TextSize = 14.000
@@ -1824,9 +1825,7 @@ local drop = {}
                 function(ep)
                     if ep then
                         if #TextBox.Text > 0 then
-                            pcall(callback, TextBox:GetPropertyChangedSignal("Text"):Connect(function()
-                               
-                               end))
+                     pcall(callback, TextBox.Text)
                             if disapper then
                                 TextBox.Text = ""
                             end
