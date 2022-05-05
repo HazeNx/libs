@@ -1162,6 +1162,24 @@ function lib:Window(text, preset, closebind)
 
                 DropItemHolder.CanvasSize = UDim2.new(0, 0, 0, DropLayout.AbsoluteContentSize.Y)
             end
+            
+local drop = {}
+    
+                function drop:Clear()
+                    DropdownTitle.Text = tostring(text).." -"
+                    TweenService:Create(
+                        Dropdown,
+                        TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
+                        {Size = UDim2.new(0, 455, 0, 30)} 
+                    ):Play()
+                    isdropping = false
+                    for i, v in next, DropScroll:GetChildren() do
+                        if v:IsA("TextButton") then
+                            v:Destroy()
+                        end
+                    end
+                end
+            
             Tab.CanvasSize = UDim2.new(0, 0, 0, TabLayout.AbsoluteContentSize.Y)
         end
         function tabcontent:Colorpicker(text, preset, callback)
