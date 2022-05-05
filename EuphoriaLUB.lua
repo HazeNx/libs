@@ -989,6 +989,7 @@ function lib:Window(text, preset, closebind)
             Tab.CanvasSize = UDim2.new(0, 0, 0, TabLayout.AbsoluteContentSize.Y)
         end
         function tabcontent:Dropdown(text, list, callback)
+           local isdropping = false
             local droptog = false
             local framesize = 0
             local itemcount = 0
@@ -1029,7 +1030,7 @@ function lib:Window(text, preset, closebind)
             DropdownTitle.Position = UDim2.new(0.0358126722, 0, 0, 0)
             DropdownTitle.Size = UDim2.new(0, 187, 0, 42)
             DropdownTitle.Font = Enum.Font.Gotham
-            DropdownTitle.Text = text
+            DropdownTitle.Text = text.." : "
             DropdownTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
             DropdownTitle.TextSize = 14.000
             DropdownTitle.TextXAlignment = Enum.TextXAlignment.Left
@@ -1141,7 +1142,7 @@ function lib:Window(text, preset, closebind)
                 Item.MouseButton1Click:Connect(
                     function()
                         droptog = not droptog
-                        DropdownTitle.Text = text .. " - " .. v
+                        DropdownTitle.Text = text .. " : " .. v
                         pcall(callback, v)
                         Dropdown:TweenSize(
                             UDim2.new(0, 363, 0, 42),
@@ -1173,7 +1174,7 @@ local drop = {}
                         {Size = UDim2.new(0, 455, 0, 30)} 
                     ):Play()
                     isdropping = false
-                    for i, v in next, DropScroll:GetChildren() do
+                    for i, v in next, DropdownBtn:GetChildren() do
                         if v:IsA("TextButton") then
                             v:Destroy()
                         end
