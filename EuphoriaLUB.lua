@@ -1824,7 +1824,9 @@ local drop = {}
                 function(ep)
                     if ep then
                         if #TextBox.Text > 0 then
-                            pcall(callback, TextBox.Text)
+                            pcall(callback, TextBox:GetPropertyChangedSignal("Text"):Connect(function()
+                               
+                               end))
                             if disapper then
                                 TextBox.Text = ""
                             end
