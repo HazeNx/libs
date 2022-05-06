@@ -1173,6 +1173,7 @@ function lib:Window(text, preset, closebind)
                         end
                     end
                 end
+                
                 function drop:Add(t)
            local isdropping = false
             local droptog = false
@@ -1222,7 +1223,7 @@ function lib:Window(text, preset, closebind)
                 Item.MouseButton1Click:Connect(
                     function()
                         droptog = not droptog
-                        DropdownTitle.Text = text .. " : " .. v and t
+                        DropdownTitle.Text = text .. " : " .. v
                         pcall(callback, v and t)
                         Dropdown:TweenSize(
                             UDim2.new(0, 363, 0, 42),
