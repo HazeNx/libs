@@ -225,10 +225,10 @@ function lib:Window(text, preset, closebind)
     Whitelist.BackgroundTransparency = 1.000
     Whitelist.Position = UDim2.new(0, 41, 0, 15)
     Whitelist.Size = UDim2.new(0, 200, 0, 25)
-    Whitelist.Font = Enum.Font.GothamBold
+    Whitelist.Font = Enum.Font.Code
     Whitelist.Text =  (identifyexecutor and table.concat({ identifyexecutor() }, " ") or "Unknown")
     Whitelist.TextColor3 = Color3.fromRGB(133, 115, 255)
-    Whitelist.TextSize = 10.000
+    Whitelist.TextSize = 12.000
     Whitelist.TextXAlignment = Enum.TextXAlignment.Left
     
     UserHead.Name = "AvatarHead"
@@ -989,7 +989,6 @@ function lib:Window(text, preset, closebind)
             Tab.CanvasSize = UDim2.new(0, 0, 0, TabLayout.AbsoluteContentSize.Y)
         end
         function tabcontent:Dropdown(text, list, callback)
-           local isdropping = false
             local droptog = false
             local framesize = 0
             local itemcount = 0
@@ -1030,7 +1029,7 @@ function lib:Window(text, preset, closebind)
             DropdownTitle.Position = UDim2.new(0.0358126722, 0, 0, 0)
             DropdownTitle.Size = UDim2.new(0, 187, 0, 42)
             DropdownTitle.Font = Enum.Font.Gotham
-            DropdownTitle.Text = text.." : "
+            DropdownTitle.Text = text
             DropdownTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
             DropdownTitle.TextSize = 14.000
             DropdownTitle.TextXAlignment = Enum.TextXAlignment.Left
@@ -1142,7 +1141,7 @@ function lib:Window(text, preset, closebind)
                 Item.MouseButton1Click:Connect(
                     function()
                         droptog = not droptog
-                        DropdownTitle.Text = text .. " : " .. v
+                        DropdownTitle.Text = text .. " - " .. v
                         pcall(callback, v)
                         Dropdown:TweenSize(
                             UDim2.new(0, 363, 0, 42),
@@ -1163,128 +1162,8 @@ function lib:Window(text, preset, closebind)
 
                 DropItemHolder.CanvasSize = UDim2.new(0, 0, 0, DropLayout.AbsoluteContentSize.Y)
             end
-            
-               local drop = {}
-                function drop:Clear()
-                    DropdownTitle.Text = tostring(text).." :"
-                    for i, v in next, DropItemHolder:GetChildren() do
-                        if v:IsA("TextButton") then
-                            v:Destroy()
-                        end
-                    end
-                end
-                
-                function drop:Add(t)
-           local isdropping = false
-            local droptog = false
-            local framesize = 0
-            local itemcount = 0
-            for i, v in next, list do
-                itemcount = itemcount + 1
-                if itemcount <= 3 then
-                    framesize = framesize + 26
-                    DropItemHolder.Size = UDim2.new(0, 342, 0, framesize)
-                end
-                local Item = Instance.new("TextButton")
-                local ItemCorner = Instance.new("UICorner")
-
-                Item.Name = "Item"
-                Item.Parent = DropItemHolder
-                Item.BackgroundColor3 = Color3.fromRGB(40,40,40)
-                Item.ClipsDescendants = true
-                Item.Size = UDim2.new(0, 335, 0, 25)
-                Item.AutoButtonColor = false
-                Item.Font = Enum.Font.Gotham
-                Item.Text = v or t
-                Item.TextColor3 = Color3.fromRGB(255, 255, 255)
-                Item.TextSize = 15.000
-
-                ItemCorner.CornerRadius = UDim.new(0, 4)
-                ItemCorner.Name = "ItemCorner"
-                ItemCorner.Parent = Item
-                Item.MouseEnter:Connect(
-                    function()
-                        TweenService:Create(
-                            Item,
-                            TweenInfo.new(.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
-                            {BackgroundColor3 = Color3.fromRGB(37, 37, 37)}
-                        ):Play()
-                    end
-                )
-                Item.MouseLeave:Connect(
-                    function()
-                        TweenService:Create(
-                            Item,
-                            TweenInfo.new(.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
-                            {BackgroundColor3 = Color3.fromRGB(40,40,40)}
-                        ):Play()
-                    end
-                )
-                Item.MouseButton1Click:Connect(
-                    function()
-                        droptog = not droptog
-                        DropdownTitle.Text = text .. " : " .. v or tostring(t)
-                        pcall(callback, v and t)
-                        Dropdown:TweenSize(
-                            UDim2.new(0, 363, 0, 42),
-                            Enum.EasingDirection.Out,
-                            Enum.EasingStyle.Quart,
-                            .2,
-                            true
-                        )
-                        TweenService:Create(
-                            ArrowImg,
-                            TweenInfo.new(.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
-                            {Rotation = 0}
-                        ):Play()
-                        wait(.2)
-                        Tab.CanvasSize = UDim2.new(0, 0, 0, TabLayout.AbsoluteContentSize.Y)
-                    end
-                )
-                DropItemHolder.CanvasSize = UDim2.new(0, 0, 0, DropLayout.AbsoluteContentSize.Y)
-            end
-    
-            DropButton2.MouseButton1Click:Connect(
-                function()
-                    if droptog == false then
-                        Dropdown:TweenSize(
-                            UDim2.new(0, 363, 0, 55 + framesize),
-                            Enum.EasingDirection.Out,
-                            Enum.EasingStyle.Quart,
-                            .2,
-                            true
-                        )
-                        TweenService:Create(
-                            ArrowImg,
-                            TweenInfo.new(.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
-                            {Rotation = 270}
-                        ):Play()
-                        wait(.2)
-                        Tab.CanvasSize = UDim2.new(0, 0, 0, TabLayout.AbsoluteContentSize.Y)
-                    else
-                        Dropdown:TweenSize(
-                            UDim2.new(0, 363, 0, 42),
-                            Enum.EasingDirection.Out,
-                            Enum.EasingStyle.Quart,
-                            .2,
-                            true
-                        )
-                        TweenService:Create(
-                            ArrowImg,
-                            TweenInfo.new(.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
-                            {Rotation = 0}
-                        ):Play()
-                        wait(.2)
-                        Tab.CanvasSize = UDim2.new(0, 0, 0, TabLayout.AbsoluteContentSize.Y)
-                    end
-                    droptog = not droptog
-                end
-            )
-                end
-                return drop
-   end
             Tab.CanvasSize = UDim2.new(0, 0, 0, TabLayout.AbsoluteContentSize.Y)
-            
+        end
         function tabcontent:Colorpicker(text, preset, callback)
             local ColorPickerToggled = false
             local OldToggleColor = Color3.fromRGB(0, 0, 0)
@@ -1809,13 +1688,13 @@ function lib:Window(text, preset, closebind)
             return labell
         end
         
-         function tabcontent: Separator(text)
+         function tabcontent:Separator(text)
             local SepBtn = Instance.new("TextButton")
             local SepCorner = Instance.new("UICorner")
             local SepTitle = Instance.new("TextLabel")
             local SepLeft = Instance.new("TextLabel")
             local SepRight = Instance.new("TextLabel")
-            
+            local sepaa = {}
 
             SepBtn.Name = "SepButton"
             SepBtn.Parent = Tab
@@ -1869,6 +1748,11 @@ function lib:Window(text, preset, closebind)
             SepRight.TextColor3 = Color3.fromRGB(25, 255, 190)
             SepRight.TextSize = 10.000
             SepRight.TextXAlignment = Enum.TextXAlignment.Right
+            
+            function sepaa:Refresh(newsepa)
+               SepTitle.Text = newsepa
+            end
+            return sepaa
             end
         
         function tabcontent:Textbox(text, disapper, callback)
@@ -1918,16 +1802,15 @@ function lib:Window(text, preset, closebind)
             TextBox.BackgroundTransparency = 1.000
             TextBox.Size = UDim2.new(0, 100, 0, 23)
             TextBox.Font = Enum.Font.Gotham
-            TextBox.PlaceholderText = "Type Here..."
             TextBox.Text = ""
             TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
             TextBox.TextSize = 14.000
---dickhardhs
+--dickhardhsh
             TextBox.FocusLost:Connect(
                 function(ep)
                     if ep then
                         if #TextBox.Text > 0 then
-                     pcall(callback, TextBox.Text)
+                            pcall(callback, TextBox.Text)
                             if disapper then
                                 TextBox.Text = ""
                             end
