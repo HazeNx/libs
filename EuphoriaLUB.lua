@@ -1188,13 +1188,13 @@ function lib:Window(text, preset, closebind)
             DropButton2.BackgroundTransparency = 1.000
             DropButton2.Size = UDim2.new(0, 363, 0, 42)
             DropButton2.Font = Enum.Font.SourceSans
-            DropButton2.Text = ""
+            DropButton2.Text = tostring(t)
             DropButton2.TextColor3 = Color3.fromRGB(0, 0, 0)
             DropButton2.TextSize = 14.000
     
                     DropButton2.MouseButton1Click:Connect(function()
-                        togdrop = not togdrop
-                        DropdownTitle.Text = text .. " : " .. v
+                  togdrop = not togdrop
+DropdownTitle.Text = text.." : " .. tostring(t)
                         pcall(callback, v)
                         Dropdown:TweenSize(
                             UDim2.new(0, 363, 0, 42),
