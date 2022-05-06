@@ -1167,12 +1167,6 @@ function lib:Window(text, preset, closebind)
                local drop = {}
                 function drop:Clear()
                     DropdownTitle.Text = tostring(text).." :"
-                    TweenService:Create(
-                        Dropdown,
-                        TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
-                        {Size = UDim2.new(0, 455, 0, 30)} 
-                    ):Play()
-                    isdropping = false
                     for i, v in next, DropItemHolder:GetChildren() do
                         if v:IsA("TextButton") then
                             v:Destroy()
@@ -1184,7 +1178,7 @@ function lib:Window(text, preset, closebind)
             local droptog = false
             local framesize = 0
             local itemcount = 0
-            for i, v in next, list and t do
+            for i, v in next, list do
                 itemcount = itemcount + 1
                 if itemcount <= 3 then
                     framesize = framesize + 26
@@ -1200,7 +1194,7 @@ function lib:Window(text, preset, closebind)
                 Item.Size = UDim2.new(0, 335, 0, 25)
                 Item.AutoButtonColor = false
                 Item.Font = Enum.Font.Gotham
-                Item.Text = v
+                Item.Text = v and t
                 Item.TextColor3 = Color3.fromRGB(255, 255, 255)
                 Item.TextSize = 15.000
 
@@ -1228,8 +1222,8 @@ function lib:Window(text, preset, closebind)
                 Item.MouseButton1Click:Connect(
                     function()
                         droptog = not droptog
-                        DropdownTitle.Text = text .. " : " .. v
-                        pcall(callback, v)
+                        DropdownTitle.Text = text .. " : " .. v and t
+                        pcall(callback, v and t)
                         Dropdown:TweenSize(
                             UDim2.new(0, 363, 0, 42),
                             Enum.EasingDirection.Out,
