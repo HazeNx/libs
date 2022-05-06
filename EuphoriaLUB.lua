@@ -1184,7 +1184,7 @@ function lib:Window(text, preset, closebind)
             local droptog = false
             local framesize = 0
             local itemcount = 0
-            for i, v in next, list do
+            for i, v in next, list and t do
                 itemcount = itemcount + 1
                 if itemcount <= 3 then
                     framesize = framesize + 26
@@ -1200,7 +1200,7 @@ function lib:Window(text, preset, closebind)
                 Item.Size = UDim2.new(0, 335, 0, 25)
                 Item.AutoButtonColor = false
                 Item.Font = Enum.Font.Gotham
-                Item.Text = tostring(t)
+                Item.Text = v
                 Item.TextColor3 = Color3.fromRGB(255, 255, 255)
                 Item.TextSize = 15.000
 
@@ -1228,7 +1228,7 @@ function lib:Window(text, preset, closebind)
                 Item.MouseButton1Click:Connect(
                     function()
                         droptog = not droptog
-                        DropdownTitle.Text = text .. " : " .. t
+                        DropdownTitle.Text = text .. " : " .. v
                         pcall(callback, v)
                         Dropdown:TweenSize(
                             UDim2.new(0, 363, 0, 42),
