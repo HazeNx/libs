@@ -1180,21 +1180,55 @@ function lib:Window(text, preset, closebind)
                     end
                 end
                 function drop:Add(t)
-                    local DropButton2 = Instance.new("TextButton")
-    
-            DropButton2.Name = "DropButton2"
-            DropButton2.Parent = Dropdown
-            DropButton2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-            DropButton2.BackgroundTransparency = 1.000
-            DropButton2.Size = UDim2.new(0, 363, 0, 42)
-            DropButton2.Font = Enum.Font.SourceSans
-            DropButton2.Text = tostring(t)
-            DropButton2.TextColor3 = Color3.fromRGB(0, 0, 0)
-            DropButton2.TextSize = 14.000
-    
-                    DropButton2.MouseButton1Click:Connect(function()
-                  togdrop = not togdrop
-DropdownTitle.Text = text.." : " .. tostring(t)
+           local isdropping = false
+            local droptog = false
+            local framesize = 0
+            local itemcount = 0
+            for i, v in next, list do
+                itemcount = itemcount + 1
+                if itemcount <= 3 then
+                    framesize = framesize + 26
+                    DropItemHolder.Size = UDim2.new(0, 342, 0, framesize)
+                end
+                local Item = Instance.new("TextButton")
+                local ItemCorner = Instance.new("UICorner")
+
+                Item.Name = "Item"
+                Item.Parent = DropItemHolder
+                Item.BackgroundColor3 = Color3.fromRGB(40,40,40)
+                Item.ClipsDescendants = true
+                Item.Size = UDim2.new(0, 335, 0, 25)
+                Item.AutoButtonColor = false
+                Item.Font = Enum.Font.Gotham
+                Item.Text = v and tostring(t)
+                Item.TextColor3 = Color3.fromRGB(255, 255, 255)
+                Item.TextSize = 15.000
+
+                ItemCorner.CornerRadius = UDim.new(0, 4)
+                ItemCorner.Name = "ItemCorner"
+                ItemCorner.Parent = Item
+                Item.MouseEnter:Connect(
+                    function()
+                        TweenService:Create(
+                            Item,
+                            TweenInfo.new(.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
+                            {BackgroundColor3 = Color3.fromRGB(37, 37, 37)}
+                        ):Play()
+                    end
+                )
+                Item.MouseLeave:Connect(
+                    function()
+                        TweenService:Create(
+                            Item,
+                            TweenInfo.new(.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
+                            {BackgroundColor3 = Color3.fromRGB(40,40,40)}
+                        ):Play()
+                    end
+                )
+                Item.MouseButton1Click:Connect(
+                    function()
+                        droptog = not droptog
+                        DropdownTitle.Text = text .. " : " .. v and t
                         pcall(callback, v)
                         Dropdown:TweenSize(
                             UDim2.new(0, 363, 0, 42),
@@ -1210,7 +1244,47 @@ DropdownTitle.Text = text.." : " .. tostring(t)
                         ):Play()
                         wait(.2)
                         Tab.CanvasSize = UDim2.new(0, 0, 0, TabLayout.AbsoluteContentSize.Y)
-                    end)
+                    end
+                )
+                DropItemHolder.CanvasSize = UDim2.new(0, 0, 0, DropLayout.AbsoluteContentSize.Y)
+            end
+    
+            DropButton2.MouseButton1Click:Connect(
+                function()
+                    if droptog == false then
+                        Dropdown:TweenSize(
+                            UDim2.new(0, 363, 0, 55 + framesize),
+                            Enum.EasingDirection.Out,
+                            Enum.EasingStyle.Quart,
+                            .2,
+                            true
+                        )
+                        TweenService:Create(
+                            ArrowImg,
+                            TweenInfo.new(.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
+                            {Rotation = 270}
+                        ):Play()
+                        wait(.2)
+                        Tab.CanvasSize = UDim2.new(0, 0, 0, TabLayout.AbsoluteContentSize.Y)
+                    else
+                        Dropdown:TweenSize(
+                            UDim2.new(0, 363, 0, 42),
+                            Enum.EasingDirection.Out,
+                            Enum.EasingStyle.Quart,
+                            .2,
+                            true
+                        )
+                        TweenService:Create(
+                            ArrowImg,
+                            TweenInfo.new(.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
+                            {Rotation = 0}
+                        ):Play()
+                        wait(.2)
+                        Tab.CanvasSize = UDim2.new(0, 0, 0, TabLayout.AbsoluteContentSize.Y)
+                    end
+                    droptog = not droptog
+                end
+            )
                 end
                 return drop
    end
