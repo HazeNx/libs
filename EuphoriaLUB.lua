@@ -1195,7 +1195,7 @@ function lib:Window(text, preset, closebind)
                 Item.Size = UDim2.new(0, 335, 0, 25)
                 Item.AutoButtonColor = false
                 Item.Font = Enum.Font.Gotham
-                Item.Text = v and t
+                Item.Text = v or t
                 Item.TextColor3 = Color3.fromRGB(255, 255, 255)
                 Item.TextSize = 15.000
 
@@ -1223,7 +1223,7 @@ function lib:Window(text, preset, closebind)
                 Item.MouseButton1Click:Connect(
                     function()
                         droptog = not droptog
-                        DropdownTitle.Text = text .. " : " .. v
+                        DropdownTitle.Text = text .. " : " .. v or tostring(t)
                         pcall(callback, v and t)
                         Dropdown:TweenSize(
                             UDim2.new(0, 363, 0, 42),
