@@ -1164,25 +1164,58 @@ function lib:Window(text, preset, closebind)
                 DropItemHolder.CanvasSize = UDim2.new(0, 0, 0, DropLayout.AbsoluteContentSize.Y)
             end
             
-local drop = {}
-    
+               local drop = {}
                 function drop:Clear()
-                    DropdownTitle.Text = tostring(text).." -"
+                    DropdownTitle.Text = tostring(text).." :"
                     TweenService:Create(
                         Dropdown,
                         TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
                         {Size = UDim2.new(0, 455, 0, 30)} 
                     ):Play()
                     isdropping = false
-                    for i, v in next, DropdownBtn:GetChildren() do
+                    for i, v in next, DropItemHolder:GetChildren() do
                         if v:IsA("TextButton") then
                             v:Destroy()
                         end
                     end
                 end
-            
+                function drop:Add(t)
+                    local DropButton2 = Instance.new("TextButton")
+    
+            DropButton2.Name = "DropButton2"
+            DropButton2.Parent = Dropdown
+            DropButton2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+            DropButton2.BackgroundTransparency = 1.000
+            DropButton2.Size = UDim2.new(0, 363, 0, 42)
+            DropButton2.Font = Enum.Font.SourceSans
+            DropButton2.Text = ""
+            DropButton2.TextColor3 = Color3.fromRGB(0, 0, 0)
+            DropButton2.TextSize = 14.000
+    
+                    DropButton2.MouseButton1Click:Connect(function()
+                        togdrop = not togdrop
+                        DropdownTitle.Text = text .. " : " .. v
+                        pcall(callback, v)
+                        Dropdown:TweenSize(
+                            UDim2.new(0, 363, 0, 42),
+                            Enum.EasingDirection.Out,
+                            Enum.EasingStyle.Quart,
+                            .2,
+                            true
+                        )
+                        TweenService:Create(
+                            ArrowImg,
+                            TweenInfo.new(.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
+                            {Rotation = 0}
+                        ):Play()
+                        wait(.2)
+                        Tab.CanvasSize = UDim2.new(0, 0, 0, TabLayout.AbsoluteContentSize.Y)
+                    end)
+                end
+                return drop
+   end
             Tab.CanvasSize = UDim2.new(0, 0, 0, TabLayout.AbsoluteContentSize.Y)
-        end
+            
         function tabcontent:Colorpicker(text, preset, callback)
             local ColorPickerToggled = false
             local OldToggleColor = Color3.fromRGB(0, 0, 0)
