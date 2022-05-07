@@ -481,9 +481,9 @@ end)
         Tab.BackgroundTransparency = 1.000
         Tab.BorderSizePixel = 0
         Tab.Position = UDim2.new(0, 10, 0, 50)
-        Tab.Size = UDim2.new(0, 320, 0, 250)
+        Tab.Size = UDim2.new(0, 320, 0, 150)
         Tab.CanvasSize = UDim2.new(0, 0, 0, 0)
-        Tab.ScrollBarThickness = 3
+        Tab.ScrollBarThickness = 2
         Tab.Visible = false
 
         TabLayout.Name = "TabLayout"
