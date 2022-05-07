@@ -485,6 +485,7 @@ end)
         Tab.CanvasSize = UDim2.new(0, 0, 0, 0)
         Tab.ScrollBarThickness = 2
         Tab.Visible = false
+        Tab.ScrollingDirection = Enum.ScrollingDirection.Y
 
         TabLayout.Name = "TabLayout"
         TabLayout.Parent = Tab
