@@ -156,7 +156,7 @@ function lib:Window(text, preset, closebind)
       Title.Font = Enum.Font.GothamSemibold
       Title.Text = "•"
       Title.TextColor3 = Color3.fromRGB(255, 110, 0)
-      Title.TextSize = 30.000
+      Title.TextSize = 30.001
       Title.TextXAlignment = Enum.TextXAlignment.Left
    
       Pong.Name = "Pong"
